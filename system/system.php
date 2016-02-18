@@ -107,6 +107,10 @@ class System {
 
     public function run() {
         $controller_path = CONTROLLERS . $this->_controller . 'Controller.php';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8521b93384d5547801628c6cf4d9f0edfb17fb57
         if (!file_exists($controller_path)) {
             require_once(CONTROLLERS . 'erroController.php');
             $_SESSION['erro']['msg']= 'Core: Não existe o controller : [' . $controller_path . ']';

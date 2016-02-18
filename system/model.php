@@ -3,10 +3,17 @@
 class model {
 
     protected $db;
+<<<<<<< HEAD
     protected $host = "localhost";
     protected $database = "eventosdb";
     protected $user = "root";
     protected $password = "";
+=======
+    protected $host = DBHOST;
+    protected $database = DBNAME;
+    protected $user = DBUSER;
+    protected $password = DBPASS;
+>>>>>>> 8521b93384d5547801628c6cf4d9f0edfb17fb57
     protected $last_query;
     protected $count;
     public $_table;
