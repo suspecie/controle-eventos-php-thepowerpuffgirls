@@ -1,17 +1,29 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.29, created on 2016-02-18 10:41:17
+=======
+/* Smarty version 3.1.29, created on 2016-02-17 07:48:19
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/color/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
+<<<<<<< HEAD
   'unifunc' => 'content_56c5bbed5a30f1_16616046',
+=======
+  'unifunc' => 'content_56c441e3c86a29_96934053',
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   'file_dependency' => 
   array (
     'ff10865dd8b5e1e58f66b4c26418254b962c9fc0' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/color/index.tpl',
+<<<<<<< HEAD
       1 => 1455703808,
+=======
+      1 => 1453928755,
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
       2 => 'file',
     ),
   ),
@@ -23,10 +35,16 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_56c5bbed5a30f1_16616046 ($_smarty_tpl) {
 $_smarty_tpl->compiled->nocache_hash = '49652472256c5bbed56c924_70285237';
 ?>
 
+=======
+function content_56c441e3c86a29_96934053 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '175941428956c441e3c202a0_07199539';
+?>
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.29, created on 2016-02-18 07:52:08
+=======
+/* Smarty version 3.1.29, created on 2016-02-16 14:21:22
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/color/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
+<<<<<<< HEAD
   'unifunc' => 'content_56c59448e90c58_18935715',
+=======
+  'unifunc' => 'content_56c34c825cbc50_66004448',
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   'file_dependency' => 
   array (
     'fd37d07835b0669840c41c824ce7892316956d51' => 
@@ -23,7 +31,11 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     '9606bee89157dcc402789e9ff996945ae3b56c9e' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/comum/sidebar.tpl',
+<<<<<<< HEAD
       1 => 1455643087,
+=======
+      1 => 1453928755,
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
       2 => 'file',
     ),
     'f0425bc0a7100f60177aaf42c2c7b262f46a07f9' => 
@@ -35,7 +47,11 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   ),
   'cache_lifetime' => 3600,
 ),true)) {
+<<<<<<< HEAD
 function content_56c59448e90c58_18935715 ($_smarty_tpl) {
+=======
+function content_56c34c825cbc50_66004448 ($_smarty_tpl) {
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,12 +100,15 @@ function content_56c59448e90c58_18935715 ($_smarty_tpl) {
                     <li>
                         <a href="/color">Color</a>
                     </li>
+<<<<<<< HEAD
                      <li>
                         <a href="/operadorescomsenha">Operadores</a>
                     </li>
                      <li>
                         <a href="/cliente">Cliente</a>
                     </li>
+=======
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
                     <li>
                         <a href="/bob">Bob Erro test</a>
                     </li>

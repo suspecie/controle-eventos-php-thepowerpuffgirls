@@ -3,10 +3,23 @@
 class model {
 
     protected $db;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    protected $host = "localhost";
+    protected $database = "eventosdb";
+    protected $user = "root";
+    protected $password = "";
+=======
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
     protected $host = DBHOST;
     protected $database = DBNAME;
     protected $user = DBUSER;
     protected $password = DBPASS;
+<<<<<<< HEAD
+=======
+>>>>>>> 8521b93384d5547801628c6cf4d9f0edfb17fb57
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
     protected $last_query;
     protected $count;
     public $_table;
@@ -161,7 +174,11 @@ class model {
         }
     }
 
+<<<<<<< HEAD
    public function delete($table = NULL, $where = NULL, $exec = TRUE) {
+=======
+    public function delete($table = NULL, $where = NULL, $exec = TRUE) {
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
         $this->_table = ($table != NULL ? $table : NULL);
         if ($this->_table == NULL)
             return FALSE;

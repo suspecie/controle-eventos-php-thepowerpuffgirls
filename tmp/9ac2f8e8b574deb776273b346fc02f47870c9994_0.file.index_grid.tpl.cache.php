@@ -1,17 +1,29 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.29, created on 2016-02-18 10:41:17
+=======
+/* Smarty version 3.1.29, created on 2016-02-17 07:48:19
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/color/index_grid.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
+<<<<<<< HEAD
   'unifunc' => 'content_56c5bbed5db5b3_17164991',
+=======
+  'unifunc' => 'content_56c441e3f1e613_71993255',
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
   'file_dependency' => 
   array (
     '9ac2f8e8b574deb776273b346fc02f47870c9994' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/color/index_grid.tpl',
+<<<<<<< HEAD
       1 => 1453928755,
+=======
+      1 => 1455643341,
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
       2 => 'file',
     ),
   ),
@@ -19,8 +31,13 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_56c5bbed5db5b3_17164991 ($_smarty_tpl) {
 $_smarty_tpl->compiled->nocache_hash = '32136355456c5bbed5b6f86_32771281';
+=======
+function content_56c441e3f1e613_71993255 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '4487814656c441e3c95262_98054614';
+>>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
 ?>
 <table class="table table-striped">
     <thead>
