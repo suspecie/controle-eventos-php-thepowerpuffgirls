@@ -1,3 +1,4 @@
+
 -- CRIAÇÃO DO BANCO
 DROP DATABASE IF EXISTS eventosdb;
 
