@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-18 10:31:40
+/* Smarty version 3.1.29, created on 2016-02-18 13:41:26
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c5b9ac62d986_66845491',
+  'unifunc' => 'content_56c5e6265a91e6_59997876',
   'file_dependency' => 
   array (
     'cbdb0cb6a142c53cbf8980a8b5d7ce4153dc5f12' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index.tpl',
-      1 => 1455641489,
+      1 => 1455807100,
       2 => 'file',
     ),
     '708d5a7404cc3b15139cfff315dc9bc4832d7d47' => 
@@ -23,13 +23,13 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     '9606bee89157dcc402789e9ff996945ae3b56c9e' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/comum/sidebar.tpl',
-      1 => 1455643087,
+      1 => 1455808287,
       2 => 'file',
     ),
     '0be73180b0b49b66bffd97ef731f7ecdede92342' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index_grid.tpl',
-      1 => 1455730366,
+      1 => 1455807100,
       2 => 'file',
     ),
     'f0425bc0a7100f60177aaf42c2c7b262f46a07f9' => 
@@ -41,8 +41,10 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_56c5b9ac62d986_66845491 ($_smarty_tpl) {
+function content_56c5e6265a91e6_59997876 ($_smarty_tpl) {
 ?>
+<br />
+<b>Warning</b>:  touch():  in <b>/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/vendor/smarty/smarty/libs/sysplugins/smarty_template_compiled.php</b> on line <b>230</b><br />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,42 +79,41 @@ function content_56c5b9ac62d986_66845491 ($_smarty_tpl) {
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="/">
-                            Chayote PHP
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/color">Color</a>
-                    </li>
-                     <li>
-                        <a href="/operadorescomsenha">Operadores</a>
-                    </li>
-                     <li>
-                        <a href="/cliente">Cliente</a>
-                    </li>
-                    <li>
-                        <a href="/bob">Bob Erro test</a>
-                    </li>
-                    <li>
-                        <a href="/blank">Blank</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #2</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #3</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #4</a>
-                    </li>
-                </ul>
-            </div>
+      <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="/">
+                Controle de Eventos
+            </a>                   
+        <li>
+            <a href="/operadorescomsenha">Operadores</a>
+        </li>
+        <li>
+            <a href="/cliente">Cliente</a>
+        </li>
+        <li>
+            <a href="/estado">Estado</a>
+        </li>
+        <li>
+            <a href="/departamento">Departamento</a>
+        </li>
+        <li>
+            <a href="/produto">Produto</a>
+        </li>
+        <li>
+            <a href="/statusprod">Status do Produto</a>
+        </li>
+        <li>
+            <a href="/evento">Evento</a>
+        </li>
+        <li>
+            <a href="/statusevento">Status do Evento</a>
+        </li>
+        <li>
+            <a href="/cidade">Cidade</a>
+        </li>
+    </ul>
+</div>
 
             <!-- /#sidebar-wrapper -->
 
@@ -126,7 +127,9 @@ function content_56c5b9ac62d986_66845491 ($_smarty_tpl) {
                                 </p>                            
                             <a href="/cliente/add" class="btn btn-default" id="btn_novo">Novo Ciente</a>
                             <br>
-                            <table class="table table-striped">
+                            <br />
+<b>Warning</b>:  touch():  in <b>/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/vendor/smarty/smarty/libs/sysplugins/smarty_template_compiled.php</b> on line <b>230</b><br />
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Codigo</th>
@@ -140,18 +143,7 @@ function content_56c5b9ac62d986_66845491 ($_smarty_tpl) {
         </tr>
     </thead>
     <tbody>
-                    <tr>                                                                
-                <td>14</td>
-                <td>k</td>
-                <td>k</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>                
-                <td>k</td>
-                <td><a href="/cliente/detalhes/id/14">Details</a> | 
-                    <a href="/cliente/edit/id/14">Edit</a> | 
-                    <a href="/cliente/delete/id/14" class="del">Delete</a></td>
-            </tr>
+                    <tr><td colspan="100%">Sem Registros</td></tr>
                   
     </tbody>
 </table>

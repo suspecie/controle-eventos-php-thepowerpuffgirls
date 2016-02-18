@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-18 10:31:40
+/* Smarty version 3.1.29, created on 2016-02-18 13:41:26
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index_grid.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c5b9ac6243b4_50314295',
+  'unifunc' => 'content_56c5e6265a09c5_98444515',
   'file_dependency' => 
   array (
     '0be73180b0b49b66bffd97ef731f7ecdede92342' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index_grid.tpl',
-      1 => 1455730366,
+      1 => 1455807100,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c5b9ac6243b4_50314295 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '184914786656c5b9ac5fee52_02948031';
+function content_56c5e6265a09c5_98444515 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '76698062156c5e62657e008_16171516';
 ?>
 <table class="table table-striped">
     <thead>

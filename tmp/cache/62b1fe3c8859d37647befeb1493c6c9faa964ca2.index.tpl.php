@@ -1,29 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-18 10:41:16
-=======
-/* Smarty version 3.1.29, created on 2016-02-18 10:37:02
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
+/* Smarty version 3.1.29, created on 2016-02-18 13:40:39
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/index/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56c5bbec04bb19_53911813',
-=======
-  'unifunc' => 'content_56c5baee7a2381_21051058',
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
+  'unifunc' => 'content_56c5e5f7a65f64_91178889',
   'file_dependency' => 
   array (
     '62b1fe3c8859d37647befeb1493c6c9faa964ca2' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/index/index.tpl',
-<<<<<<< HEAD
-      1 => 1453928755,
-=======
-      1 => 1455798902,
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
+      1 => 1455808123,
       2 => 'file',
     ),
     '708d5a7404cc3b15139cfff315dc9bc4832d7d47' => 
@@ -35,11 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     '9606bee89157dcc402789e9ff996945ae3b56c9e' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/comum/sidebar.tpl',
-<<<<<<< HEAD
-      1 => 1455643087,
-=======
-      1 => 1455798832,
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
+      1 => 1455808287,
       2 => 'file',
     ),
     'f0425bc0a7100f60177aaf42c2c7b262f46a07f9' => 
@@ -51,11 +35,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-<<<<<<< HEAD
-function content_56c5bbec04bb19_53911813 ($_smarty_tpl) {
-=======
-function content_56c5baee7a2381_21051058 ($_smarty_tpl) {
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
+function content_56c5e5f7a65f64_91178889 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,56 +71,41 @@ function content_56c5baee7a2381_21051058 ($_smarty_tpl) {
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="/">
-<<<<<<< HEAD
-                            Chayote PHP
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/color">Color</a>
-                    </li>
-                     <li>
-                        <a href="/operadorescomsenha">Operadores</a>
-                    </li>
-                     <li>
-                        <a href="/cliente">Cliente</a>
-                    </li>
-                    <li>
-                        <a href="/bob">Bob Erro test</a>
-                    </li>
-                    <li>
-                        <a href="/blank">Blank</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #2</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #3</a>
-                    </li>
-                    <li>
-                        <a href="#">Link #4</a>
-=======
-                            Controle de Eventos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/evento">Evento</a>
-                    </li>
-                     <li>
-                        <a href="/statusevento">Status do Evento</a>
-                    </li>
-                    <li>
-                        <a href="/cidade">Cidade</a>
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
-                    </li>
-                </ul>
-            </div>
+      <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="/">
+                Controle de Eventos
+            </a>                   
+        <li>
+            <a href="/operadorescomsenha">Operadores</a>
+        </li>
+        <li>
+            <a href="/cliente">Cliente</a>
+        </li>
+        <li>
+            <a href="/estado">Estado</a>
+        </li>
+        <li>
+            <a href="/departamento">Departamento</a>
+        </li>
+        <li>
+            <a href="/produto">Produto</a>
+        </li>
+        <li>
+            <a href="/statusprod">Status do Produto</a>
+        </li>
+        <li>
+            <a href="/evento">Evento</a>
+        </li>
+        <li>
+            <a href="/statusevento">Status do Evento</a>
+        </li>
+        <li>
+            <a href="/cidade">Cidade</a>
+        </li>
+    </ul>
+</div>
 
             <!-- /#sidebar-wrapper -->
 
@@ -149,14 +114,8 @@ function content_56c5baee7a2381_21051058 ($_smarty_tpl) {
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-<<<<<<< HEAD
-                            <h1>Welcome to Chayote PHP</h1>
-                            <p>Help us to improve this litle Framework</p>
-                            <p>Make sure to keep all page content within the <code>https://github.com/fabioalvaro/ChayotePHP</code>.</p>
-=======
                             <h1>Bem-Vindo ao Controle de Evento</h1>
                             <p>by The Powerpuff Girls</p>
->>>>>>> 639288d9e5c15f5bef2690fdaa65839ae43926c5
                             <br>
                             <br>
                             <br>

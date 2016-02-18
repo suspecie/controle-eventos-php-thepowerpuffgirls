@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-18 10:31:40
+/* Smarty version 3.1.29, created on 2016-02-18 13:41:26
   from "/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c5b9ac5f0128_47841143',
+  'unifunc' => 'content_56c5e62656b638_57359670',
   'file_dependency' => 
   array (
     'cbdb0cb6a142c53cbf8980a8b5d7ce4153dc5f12' => 
     array (
       0 => '/var/www/htdocs/controle-eventos-php-thepowerpuffgirls/views/cliente/index.tpl',
-      1 => 1455641489,
+      1 => 1455807100,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56c5b9ac5f0128_47841143 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '185607653956c5b9ac5baae0_17308780';
+function content_56c5e62656b638_57359670 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '201585659956c5e62652fb71_87112678';
 ?>
 <!DOCTYPE html>
 <html lang="en">
