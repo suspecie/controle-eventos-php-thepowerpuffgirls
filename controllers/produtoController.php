@@ -1,7 +1,14 @@
 <?php
 
 class produto extends controller {
-
+   
+    public function __construct() {
+        parent::__construct();
+        include 'controllers/loginController.php';
+        $valida = new login();
+        $valida->sessao_valida();
+    }
+    
     public function index_action() {
 
         //list all records
