@@ -31,5 +31,11 @@
         <li>
             <a href="/cidade">Cidade</a>
         </li>
+        <li>
+            <a href="/relatoriocliente">Relatorio de Clientes</a>
+        </li>
+        <li>
+            <a href="/relatorioeventocliente">Relatorio de Eventos e Clientes</a>
+        </li>
     </ul>
 </div>
