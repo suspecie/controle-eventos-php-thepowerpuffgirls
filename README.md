@@ -9,6 +9,10 @@ Execução passo a passo:
 
 3) Dar permissão na pasta do projeto (chmod 777 -R)
 
+Para acessar o sistema:
+login: admin
+senha: 123
+
 
 Tarefas não realizadas:
 
