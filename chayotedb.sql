@@ -1,4 +1,3 @@
-
 -- CRIAÇÃO DO BANCO
 DROP DATABASE IF EXISTS eventosdb;
 
@@ -129,7 +128,7 @@ CREATE TABLE eventosdb.produtos (
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='Tabela de Produtos dos Eventos';
 
 
----ARQUIVO
+-- ARQUIVO
 DROP TABLE IF EXISTS eventosdb.arquivo;
 
 CREATE TABLE eventosdb.arquivo (
@@ -138,7 +137,7 @@ CREATE TABLE eventosdb.arquivo (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
---PARTICIPACAO
+-- PARTICIPACAO
 
 CREATE TABLE eventosdb.participacao (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
