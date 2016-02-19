@@ -84,6 +84,8 @@ CREATE TABLE eventosdb.operadorescomsenha (
   CONSTRAINT `fk_operadorescomsenha_tipoacesso` FOREIGN KEY (`tipo_acesso`) REFERENCES `tipodeacesso` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO eventosdb.operadorescomsenha(`codigo`,`nome`,`senha`,`tipo_acesso`) VALUES(1,'admin',123,1);
+
 
 -- DEPARTAMENTO
 DROP TABLE IF EXISTS eventosdb.departamento;
