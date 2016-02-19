@@ -31,5 +31,8 @@
         <li>
             <a href="/cidade">Cidade</a>
         </li>
+        <li>
+            <a href="/participacao">Participação</a>
+        </li>
     </ul>
 </div>
