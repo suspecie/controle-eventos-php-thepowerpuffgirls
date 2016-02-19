@@ -129,6 +129,32 @@ CREATE TABLE eventosdb.produtos (
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='Tabela de Produtos dos Eventos';
 
 
+---ARQUIVO
+DROP TABLE IF EXISTS eventosdb.arquivo;
+
+CREATE TABLE eventosdb.arquivo (
+  `id_evento_cliente` int(11) DEFAULT NULL,
+  `caminho_arquivo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+--PARTICIPACAO
+
+CREATE TABLE eventosdb.participacao (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) DEFAULT NULL,
+  `id_evento` int(11) DEFAULT NULL,
+  `data_hora` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `fk_participacao_cliente_idx` (`id_cliente`),
+  KEY `fk_participacao_evento_idx` (`id_evento`),
+  CONSTRAINT `fk_participacao_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_participacao_evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+
 
 -- COLORS
 

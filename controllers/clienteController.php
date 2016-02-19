@@ -2,6 +2,13 @@
 
 class cliente extends controller {
 
+    public function __construct() {
+        parent::__construct();
+        include 'controllers/loginController.php';
+        $valida = new login();
+        $valida->sessao_valida();
+    }
+
     public function index_action() {
 
         //list all records
@@ -26,7 +33,7 @@ class cliente extends controller {
         $dados['codigo_uc'] = $_POST['codigo_uc'];
         $dados['codigo_nis'] = $_POST['codigo_nis'];
         $dados['cpf'] = $_POST['cpf'];
-        $dados['rg'] = $_POST['rg'];       
+        $dados['rg'] = $_POST['rg'];
         $modelcliente->setCliente($dados);
 
         header('Location: /cliente');
@@ -34,17 +41,17 @@ class cliente extends controller {
 
     public function update() {
         $id = $this->getParam('id');
-        
-         
+
+
 
         $modelcliente = new clienteModel();
         $dados['codigo'] = $id;
-        $dados['nome'] = $_POST['nome'];     
+        $dados['nome'] = $_POST['nome'];
         $dados['endereco'] = $_POST['endereco'];
         $dados['codigo_uc'] = $_POST['codigo_uc'];
         $dados['codigo_nis'] = $_POST['codigo_nis'];
         $dados['cpf'] = $_POST['cpf'];
-        $dados['rg'] = $_POST['rg'];   
+        $dados['rg'] = $_POST['rg'];
         $modelcliente->updCliente($dados);
 
         header('Location: /cliente');
@@ -61,7 +68,7 @@ class cliente extends controller {
     }
 
     public function edit() {
-       
+
         //die();
         $id = $this->getParam('id');
         $modelcliente = new clienteModel();

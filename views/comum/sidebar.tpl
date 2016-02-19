@@ -1,7 +1,7 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="/">
+            <a href="/home">
                 Controle de Eventos
             </a>                   
         <li>
@@ -36,6 +36,9 @@
         </li>
         <li>
             <a href="/relatorioeventocliente">Relatorio de Eventos e Clientes</a>
+        </li>
+        <li>
+            <a href="/participacao">Participação</a>
         </li>
     </ul>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-class index extends controller {
+class home extends controller {
     
         public function __construct() {
         parent::__construct();
@@ -13,7 +13,7 @@ class index extends controller {
 
     public function index_action() {   
             
-         $this->smarty->display('index/index.tpl');
+         $this->smarty->display('home/home.tpl');
     }
     
  

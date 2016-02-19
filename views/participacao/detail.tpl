@@ -25,9 +25,9 @@
                             <table class="table table-striped">                        
                                 <tbody>
                                     <tr><td>Código</td>  <td>{$registro.codigo}</td></tr>
-                                    <tr><td>Ciente</td>  <td>{$registro.descricao}</td></tr>
-                                    <tr><td>Evento</td>  <td>{$registro.cidade}</td></tr>
-                                    <tr><td>Data/Hora</td>  <td>{$registro.data_hora}</td></tr>                                
+                                    <tr><td>Cliente</td>  <td>{$registro.cliente}</td></tr>
+                                    <tr><td>Evento</td>  <td>{$registro.evento}</td></tr>   
+                                    <tr><td>Data/Hora</td>  <td>{$registro.data_hora}</td></tr>  
                                 </tbody>
                             </table>                            
 
