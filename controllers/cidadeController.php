@@ -13,7 +13,8 @@ class cidade extends controller {
 
         //list all records
         $model_cidades = new cidadeModel();
-        $cidades_res = $model_cidades->getCidade(''); //Full table Scan :( or :)   
+        $cidades_res = $model_cidades->getCidade(); 
+        //var_dump($cidades_res);die();
         //send the records to template sytem
         $this->smarty->assign('listcidade', $cidades_res);
         $this->smarty->assign('title', 'Cidade');
@@ -22,6 +23,13 @@ class cidade extends controller {
     }
 
     public function add() {
+         //chama estado
+        $model_estados = new estadoModel();
+        $estados_res = $model_estados->getEstado(''); //Full table Scan :( or :)         
+        //send the records to template sytem
+        $this->smarty->assign('listestado', $estados_res);
+        
+        
         $this->smarty->assign('title', 'Nova Cidade');
         $this->smarty->display('cidade/new.tpl');
     }
@@ -64,6 +72,20 @@ class cidade extends controller {
         $modelcidade = new cidadeModel();
         $rescidade = $modelcidade->getCidade('codigo=' . $id);
         $this->smarty->assign('registro', $rescidade[0]);
+        
+             //chama estado
+        $model_estados = new estadoModel();
+        $estados_res = $model_estados->getEstado(''); //Full table Scan :( or :)         
+        //send the records to template sytem
+        $this->smarty->assign('listestado', $estados_res);
+                       
+        //list all records
+        $model_cidade = new cidadeModel();
+        $cidade_res = $model_cidade->getCidade(); //Full table Scan :( or :)   
+        //send the records to template sytem
+        $this->smarty->assign('listscidade', $cidade_res);
+        
+        
         $this->smarty->assign('title', 'Detalhes Cidade');
         //call the smarty
         $this->smarty->display('cidade/edit.tpl');

@@ -12,7 +12,7 @@
             <tr>                                                                
                 <td>{$linha.codigo}</td>
                 <td>{$linha.descricao}</td>
-                <td>{$linha.id_estado}</td>
+                <td>{$linha.estado}</td>    
                  <td><a href="/cidade/detalhes/id/{$linha.codigo}">Detalhes</a> | 
                      <a href="/cidade/edit/id/{$linha.codigo}">Editar </a> | 
                      <a href="/cidade/delete/id/{$linha.codigo}" class="del">Excluir</a></td>

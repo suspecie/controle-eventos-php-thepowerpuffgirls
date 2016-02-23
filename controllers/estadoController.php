@@ -23,7 +23,7 @@ class estado extends controller {
 
     public function add() {
         $this->smarty->assign('title', 'Novo Estado');
-        $this->smarty->display('estado/new.tpl');
+        $this->smarty->display('estado/new.tpl');        
     }
 
     public function save() {
