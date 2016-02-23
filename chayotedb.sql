@@ -3,10 +3,12 @@ DROP DATABASE IF EXISTS eventosdb;
 
 CREATE DATABASE `eventosdb` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 
--- CIDADE
-DROP TABLE IF EXISTS eventosdb.cidade;
+USE eventosdb;
 
-CREATE TABLE eventosdb.cidade (
+-- CIDADE
+DROP TABLE IF EXISTS cidade;
+
+CREATE TABLE cidade (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_estado` int(11) DEFAULT NULL,
@@ -16,9 +18,9 @@ CREATE TABLE eventosdb.cidade (
 
 -- STATUS_EVENTO
 
-DROP TABLE IF EXISTS eventosdb.status_evento;
+DROP TABLE IF EXISTS status_evento;
 
-CREATE TABLE eventosdb.status_evento (
+CREATE TABLE status_evento (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
@@ -26,9 +28,9 @@ CREATE TABLE eventosdb.status_evento (
 
 -- EVENTO
 
-DROP TABLE IF EXISTS eventosdb.evento;
+DROP TABLE IF EXISTS evento;
 
-CREATE TABLE eventosdb.evento (
+CREATE TABLE evento (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_cidade` int(11) DEFAULT NULL,
@@ -42,9 +44,9 @@ CREATE TABLE eventosdb.evento (
 
 
 -- CLIENTE
-DROP TABLE IF EXISTS eventosdb.cliente;
+DROP TABLE IF EXISTS cliente;
 
-CREATE TABLE eventosdb.cliente (
+CREATE TABLE cliente (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `endereco` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -59,22 +61,22 @@ CREATE TABLE eventosdb.cliente (
 
 
 -- TIPODEACESSO
-DROP TABLE IF EXISTS eventosdb.tipodeacesso;
+DROP TABLE IF EXISTS tipodeacesso;
 
-CREATE TABLE eventosdb.tipodeacesso (
+CREATE TABLE tipodeacesso (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `acessodescricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO eventosdb.tipodeacesso(`codigo`,`acessodescricao`) VALUES(1,'ADMIN');
-INSERT INTO eventosdb.tipodeacesso(`codigo`,`acessodescricao`) VALUES(2,'OPERADOR');
+INSERT INTO tipodeacesso(`codigo`,`acessodescricao`) VALUES(1,'ADMIN');
+INSERT INTO tipodeacesso(`codigo`,`acessodescricao`) VALUES(2,'OPERADOR');
 
 -- OPERADORESCOMSENHA
 
-DROP TABLE IF EXISTS eventosdb.operadorescomsenha;
+DROP TABLE IF EXISTS operadorescomsenha;
 
-CREATE TABLE eventosdb.operadorescomsenha (
+CREATE TABLE operadorescomsenha (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `senha` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -84,40 +86,40 @@ CREATE TABLE eventosdb.operadorescomsenha (
   CONSTRAINT `fk_operadorescomsenha_tipoacesso` FOREIGN KEY (`tipo_acesso`) REFERENCES `tipodeacesso` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO eventosdb.operadorescomsenha(`codigo`,`nome`,`senha`,`tipo_acesso`) VALUES(1,'admin',123,1);
+INSERT INTO operadorescomsenha(`codigo`,`nome`,`senha`,`tipo_acesso`) VALUES(1,'admin',123,1);
 
 
 -- DEPARTAMENTO
-DROP TABLE IF EXISTS eventosdb.departamento;
+DROP TABLE IF EXISTS departamento;
 
-CREATE TABLE eventosdb.departamento (
+CREATE TABLE departamento (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `departamento` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Tabela de Departamentos do controle de Eventos';
 
 -- ESTADO
-DROP TABLE IF EXISTS eventosdb.estado;
+DROP TABLE IF EXISTS estado;
 
-CREATE TABLE eventosdb.estado (
+CREATE TABLE estado (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Tabela de Estados';
 
 -- STATUS DOS PRODUTOS
-DROP TABLE IF EXISTS eventosdb.status_produto;
+DROP TABLE IF EXISTS status_produto;
 
-CREATE TABLE eventosdb.status_produto (
+CREATE TABLE status_produto (
   `codigo` int(11) NOT NULL,
   `status_prod` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- PRODUTOS
-DROP TABLE IF EXISTS eventosdb.produtos;
+DROP TABLE IF EXISTS produtos;
 
-CREATE TABLE eventosdb.produtos (
+CREATE TABLE produtos (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `produto` varchar(45) DEFAULT NULL,
   `id_status` int(11) DEFAULT NULL,
@@ -131,9 +133,9 @@ CREATE TABLE eventosdb.produtos (
 
 
 -- ARQUIVO
-DROP TABLE IF EXISTS eventosdb.arquivo;
+DROP TABLE IF EXISTS arquivo;
 
-CREATE TABLE eventosdb.arquivo (
+CREATE TABLE arquivo (
   `id_evento_cliente` int(11) DEFAULT NULL,
   `caminho_arquivo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -141,7 +143,7 @@ CREATE TABLE eventosdb.arquivo (
 
 -- PARTICIPACAO
 
-CREATE TABLE eventosdb.participacao (
+CREATE TABLE participacao (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) DEFAULT NULL,
   `id_evento` int(11) DEFAULT NULL,
@@ -159,4 +161,4 @@ CREATE TABLE eventosdb.participacao (
 
 -- COLORS
 
-DROP TABLE IF EXISTS eventosdb.colors;
+DROP TABLE IF EXISTS colors;
