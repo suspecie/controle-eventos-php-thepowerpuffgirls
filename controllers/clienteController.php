@@ -9,18 +9,42 @@ class cliente extends controller {
         $valida->sessao_valida();
     }
 
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_clientes = new clienteModel();
-        $clientes_res = $model_clientes->getCliente(''); //Full table Scan :( or :)         
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());  
         //send the records to template sytem
-        $this->smarty->assign('listcliente', $clientes_res);
         $this->smarty->assign('title', 'Cliente');
         //call the smarty
         $this->smarty->display('cliente/index.tpl');
     }
+    
+      public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
+    public function mostraGrid() {
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        //Busca os registros para o Grid
+        $model = new model(); 
 
+        $qry_limitada = $model->readSQL("SELECT * FROM cliente LIMIT $inicio,$total_reg");
+        $this->smarty->assign('listcliente', $qry_limitada);
+        // Total de Registros na tabela    
+        $qry_total = $model->readSQL("SELECT count(*)as total FROM cliente");
+        $total_registros = $qry_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'cliente');
+        return $html;
+    }
     public function add() {
         $this->smarty->assign('title', 'Novo Cliente');
         $this->smarty->display('cliente/new.tpl');

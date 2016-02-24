@@ -30,3 +30,4 @@
         {/foreach}          
     </tbody>
 </table>
+        {$paginador}

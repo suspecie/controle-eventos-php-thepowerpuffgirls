@@ -2,18 +2,41 @@
 
 class participacao extends controller {
 
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_participacoes = new participacaoModel();
-        $participacoes_res = $model_participacoes->getParticipacao(''); //Full table Scan :( or :)   
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid()); 
         //send the records to template sytem
-        $this->smarty->assign('listparticipacao', $participacoes_res);
         $this->smarty->assign('title', 'Participações');
         //call the smarty
         $this->smarty->display('participacao/index.tpl');
     }
+public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
+    public function mostraGrid() {
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        //Busca os registros para o Grid
+        $model = new model(); 
 
+        $qry_limitada = $model->readSQL("SELECT * FROM participacao LIMIT $inicio,$total_reg");
+        $this->smarty->assign('listparticipacao', $qry_limitada);
+        // Total de Registros na tabela    
+        $qry_total = $model->readSQL("SELECT count(*)as total FROM participacao");
+        $total_registros = $qry_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'participacao');
+        return $html;
+    }
     public function add() {
         //list all records
         $model_cliente = new clienteModel();

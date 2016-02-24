@@ -131,6 +131,16 @@ class model {
         $this->count = count($data);
         return $data;
     }
+    
+    public function readSQL($query = NULL) {
+        //echo $sql.'<hr />';
+        $q = $this->db->prepare($query);
+        $q->execute();
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        $data = $q->fetchAll();
+        $this->count = count($data);
+        return $data;
+    }
 
     public function countRows() {
         return $this->count;
