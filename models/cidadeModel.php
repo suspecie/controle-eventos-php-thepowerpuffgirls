@@ -22,7 +22,11 @@ class cidadeModel extends model {
     /** Retrieve the Entity */
     public function getCidade($where = null) {
         $select = array('*');
-        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+        $tables = "cidade c LEFT JOIN estado e on c.id_estado = e.codigo";
+        $return = $this->read($tables, $select, $where, null, null, null);
+        //var_dump($return); die();
+        
+        return $return;
     }
 
     /** Save a new Entity  */
