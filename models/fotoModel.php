@@ -4,34 +4,29 @@
  */
 
 
-class participacaoModel extends model {
+class fotoModel extends model {
     
-    var $tabPadrao = 'participacao';
-    var $campo_chave = 'codigo';
+    var $tabPadrao = 'foto';
+    var $campo_chave = 'id_evento_cliente';
 
     // An empty structure to create news Entitys 
     public function estrutura_vazia() {
         $dados = null;
-        $dados[0]['codigo'] = NULL;
-        $dados[0]['id_cliente'] = NULL;
-        $dados[0]['id_evento'] = NULL;
-        $dados[0]['data_hora'] = NULL;        
+        $dados[0]['id_evento_cliente'] = NULL;
+        $dados[0]['caminho_foto'] = NULL;
+     
         return $dados;
     }
 
     
     /** Retrieve the Entity */
-    public function getParticipacao($where = null) {
-        $select = array('p.*', 'c.nome as cliente', 'e.descricao as evento', 'a.caminho_arquivo as caminho_arquivo', 'f.caminho_foto as caminho_foto');
-        $tables = "participacao p left join cliente c on (c.codigo  = p.id_cliente)";
-        $tables .= " left join evento e on (e.codigo  = p.id_evento)";
-        $tables .= " left join arquivo a on (a.id_evento_cliente  = p.codigo)";
-        $tables .= " left join foto f on (f.id_evento_cliente  = p.codigo)";
-        return $this->read($tables, $select, $where, null, null, null, null);
+    public function getFoto($where = null) {
+        $select = array('*');
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
     }
 
     /** Save a new Entity  */
-    public function setParticipacao($array) {
+    public function setFoto($array) {
 
         $this->startTransaction();
 
@@ -45,7 +40,7 @@ class participacaoModel extends model {
     }
 
     /** Update the Entity */
-    public function updParticipacao($array) {
+    public function updFoto($array) {
         //Chave    
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         $this->startTransaction();
@@ -55,7 +50,7 @@ class participacaoModel extends model {
     }
 
      /** Remove the Entity */
-    public function delParticipacao($array) {
+    public function delFoto($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         $this->startTransaction();
@@ -63,8 +58,7 @@ class participacaoModel extends model {
         $this->commit();
         return true;
     }
-    
- 
+
 }
 
 ?>

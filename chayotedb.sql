@@ -142,6 +142,7 @@ CREATE TABLE arquivo (
 
 
 -- PARTICIPACAO
+DROP TABLE IF EXISTS participcao;
 
 CREATE TABLE participacao (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
@@ -156,7 +157,13 @@ CREATE TABLE participacao (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
+-- FOTO
+DROP TABLE IF EXISTS foto;
 
+CREATE TABLE foto (
+  `id_evento_cliente` int(11) DEFAULT NULL,
+  `caminho_foto` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 -- COLORS

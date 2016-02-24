@@ -22,7 +22,7 @@
 
                         <div class="col-lg-12">
                             <h1>Nova Participação </h1>
-                            <form role="form" action="/participacao/save" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="/participacao/save/" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="cliente">Cliente</label>
                                     <select class="form-control" name = "cliente" id = "cliente">
@@ -43,11 +43,8 @@
                                     <label for="datahora">Data/Hora</label>
                                     <input type="datetime-local" class="form-control" id="datahora" name="datahora" required>
                                     <br>
-                                    <label for="file">Selecione a imagem para upload:</label>
-                                    <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
+                                    <button type="submit" class="btn btn-default">Salvar</button>
                                 </div>                                                                
-                                <button type="submit" class="btn btn-default">Salvar</button>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -4,8 +4,6 @@
     <head>
 
         {include file="comum/head.tpl"}
-        <!-- Custom CSS -->
-        <link href="/files/css/estilo.css" rel="stylesheet">
 
     </head>
 
@@ -50,28 +48,53 @@
                                     <label for="datahora">Data/Hora</label>
                                     <input type="input" class="form-control" id="datahora" name="datahora" value="{$registro.data_hora}">
                                     <br>
-                                    <label for="datahora">Arquivo (não é possível alterar o arquivo)</label>
-                                    <br>
-                                    <img src="/{$registro.caminho_arquivo}" id="arquivo" class="arquivo"/>
-                                    <br>
-                                    <br>
-                                    <label for="datahora">Foto(não é possível alterar a foto)</label>
-                                    <br>
-                                    <img src="/{$registro.caminho_foto}" id="arquivo" class="arquivo"/>
                                 </div>  
-                                <button type="submit" class="btn btn-default">Atualizar</button>
                             </form>
+                            <div class="panel panel-default">
+                                <div class="panel panel-body">
+                                    <div class="col-xs-12">
+                                        <div class="col-md-6">
+                                            <video id="video" width="640" height="480" autoplay></video>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <canvas id="canvas" width="640" height="480" ></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <br>
+                                        <input type="hidden" name="id_evento_cliente" value="{$id}" id="id_evento_cliente">
+                                        <button class="btn btn-default" id="snap">Tirar Foto</button>
+                                        <button class="btn btn-default" id="save">Salvar Foto</button>
+                                    </div>
+                                </div>
+                            </div>        
+                            <form action="/participacao/uploadFile/id_evento_cliente/{$id}" method="POST" enctype="multipart/form-data">
+                                <div class="panel panel-default">
+                                    <div class="panel panel-body">
+                                        <div class="col-xs-12">
+                                            <div >
+                                                <label class="col-md-12" for="file">Selecione a imagem para upload: </label>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <input class="col-md-12" type="file" class="form-control" name="fileToUpload" id="fileToUpload">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default">Salvar</button>
+                            </form>       
                         </div>
                     </div>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
-
         </div>
+
         <!-- /#wrapper -->
 
         {include file="comum/footer.tpl"}
-
+        <script src="/files/js/jquery-1.12.1.js" type="text/javascript"></script>
+        <script src="/files/js/fotoUtils.js" type="text/javascript"></script>
     </body>
 
 </html>

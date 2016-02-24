@@ -28,10 +28,10 @@
                                     <tr><td>Cliente</td>  <td>{$registro.cliente}</td></tr>
                                     <tr><td>Evento</td>  <td>{$registro.evento}</td></tr>   
                                     <tr><td>Data/Hora</td>  <td>{$registro.data_hora}</td></tr>  
+                                    <tr><td>Arquivo</td>  <td><img src="/{$registro.caminho_arquivo}" id="arquivo" class="arquivo"/></td></tr>  
+                                    <tr><td>Foto</td>  <td><img src="/{$registro.caminho_foto}" id="fotos" class="arquivo"/></td></tr>  
                                 </tbody>
                             </table>                            
-
-
                         </div>
 
 
