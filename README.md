@@ -20,8 +20,6 @@ Tarefas não realizadas:
 
 8. cancelar participacao e voltar produto ao estoque unico
 
-10. fazer upload de arquivos no cadastro do cliente
-
 12. emitir relatório de eventos e clientes
 
 14. dar baixa nos produtos ao cadastrar participacao
