@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-24 21:26:12
+/* Smarty version 3.1.29, created on 2016-02-25 18:16:39
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/statusprod/edit.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56ce4a24e39245_18010554',
+  'unifunc' => 'content_56cf6f37203fe7_18687110',
   'file_dependency' => 
   array (
     '76258250e68c79e4ddc9aa69e0220d9ff9f8c436' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/statusprod/edit.tpl',
-      1 => 1456332282,
+      1 => 1456434818,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56ce4a24e39245_18010554 ($_smarty_tpl) {
+function content_56cf6f37203fe7_18687110 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,7 @@ function content_56ce4a24e39245_18010554 ($_smarty_tpl) {
                                 <div class="form-group">
                                     <label for="name">Status</label>
                                     <input required="true" type="input" class="form-control" id="name" name="name" value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['status_prod'];?>
-">
+" required>
                                 </div>  
                                 
                                 <button type="submit" class="btn btn-default">Alterar</button>

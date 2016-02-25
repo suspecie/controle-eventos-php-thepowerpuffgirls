@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-24 22:40:39
+/* Smarty version 3.1.29, created on 2016-02-25 18:20:17
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/edit.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56ce5b972dacb5_00500287',
+  'unifunc' => 'content_56cf7011f10763_05873173',
   'file_dependency' => 
   array (
     '9777a9e63a80337f5074178bea9301959be32b69' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/edit.tpl',
-      1 => 1456336830,
+      1 => 1456435211,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56ce5b972dacb5_00500287 ($_smarty_tpl) {
+function content_56cf7011f10763_05873173 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@ function content_56ce5b972dacb5_00500287 ($_smarty_tpl) {
 
                                 <div class="form-group">
                                    <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                        <option value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['id_evento'];?>
 "><?php echo $_smarty_tpl->tpl_vars['registro']->value['evento'];?>
 </option>
@@ -90,7 +90,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_0_saved_item;
                                     </select >
                                     <br>
                                     <label for="cliente">Produto</label>
-                                    <select class="form-control" name = "produto" id = "produto">
+                                    <select class="form-control" name = "produto" id = "produto" required>
                                          <option value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['id_produto'];?>
 "><?php echo $_smarty_tpl->tpl_vars['registro']->value['produto'];?>
 </option>
@@ -121,8 +121,8 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_1_saved_item;
                                     </select>
                                     <br>
                                     <label for="quantidade">Quantidade</label>
-                                    <input type="text" class="form-control" id="quantidade" name="quantidade" value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['qtd'];?>
-">
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['qtd'];?>
+" required>
                                     <br>
                                 </div>    
                                 <button type="submit" class="btn btn-default">Atualizar</button>

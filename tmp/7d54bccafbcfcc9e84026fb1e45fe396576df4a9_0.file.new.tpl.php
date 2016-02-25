@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 14:31:48
-=======
-/* Smarty version 3.1.29, created on 2016-02-24 22:26:24
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:15:08
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/cidade/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf3a8494f126_43715420',
-=======
-  'unifunc' => 'content_56ce5840f060e7_04084543',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf6edc9e4d41_04944160',
   'file_dependency' => 
   array (
     '7d54bccafbcfcc9e84026fb1e45fe396576df4a9' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/cidade/new.tpl',
-      1 => 1456323785,
+      1 => 1456434091,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf3a8494f126_43715420 ($_smarty_tpl) {
-=======
-function content_56ce5840f060e7_04084543 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf6edc9e4d41_04944160 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +58,7 @@ function content_56ce5840f060e7_04084543 ($_smarty_tpl) {
                                     <input type="input" class="form-control" id="descricao" name="descricao" required>
                                     <br>
                                     <label for="estado">Estado</label>
-                                     <select class="form-control" name = "estado" id = "id_estado">
+                                     <select class="form-control" name = "estado" id = "id_estado" required>
                                          <option value=""></option>
                                        <?php
 $_from = $_smarty_tpl->tpl_vars['listestado']->value;

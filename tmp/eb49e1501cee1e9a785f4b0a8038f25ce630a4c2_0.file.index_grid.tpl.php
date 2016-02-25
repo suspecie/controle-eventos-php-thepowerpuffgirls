@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 17:55:08
+/* Smarty version 3.1.29, created on 2016-02-25 18:37:54
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/relatoriocliente/index_grid.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf6a2c8a1e86_91066445',
+  'unifunc' => 'content_56cf7432bd8d43_81752195',
   'file_dependency' => 
   array (
     'eb49e1501cee1e9a785f4b0a8038f25ce630a4c2' => 
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cf6a2c8a1e86_91066445 ($_smarty_tpl) {
+function content_56cf7432bd8d43_81752195 ($_smarty_tpl) {
 ?>
 <form role="form" action="/relatoriocliente/buscar" method="POST" enctype="multipart/form-data">
     <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o seu Nome">

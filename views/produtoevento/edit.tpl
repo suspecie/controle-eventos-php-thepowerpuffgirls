@@ -27,7 +27,7 @@
 
                                 <div class="form-group">
                                    <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                        <option value="{$registro.id_evento}">{$registro.evento}</option>
                                         {foreach from=$listevento item=linha}
                                             {if $linha.codigo neq $registro.id_evento}   
@@ -37,7 +37,7 @@
                                     </select >
                                     <br>
                                     <label for="cliente">Produto</label>
-                                    <select class="form-control" name = "produto" id = "produto">
+                                    <select class="form-control" name = "produto" id = "produto" required>
                                          <option value="{$registro.id_produto}">{$registro.produto}</option>
                                         {foreach from=$listproduto item=linha}
                                             {if $linha.codigo neq $registro.id_produto}   
@@ -47,7 +47,7 @@
                                     </select>
                                     <br>
                                     <label for="quantidade">Quantidade</label>
-                                    <input type="text" class="form-control" id="quantidade" name="quantidade" value="{$registro.qtd}">
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" value="{$registro.qtd}" required>
                                     <br>
                                 </div>    
                                 <button type="submit" class="btn btn-default">Atualizar</button>

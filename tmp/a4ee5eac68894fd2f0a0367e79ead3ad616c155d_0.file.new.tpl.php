@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 15:09:07
-=======
-/* Smarty version 3.1.29, created on 2016-02-24 22:38:54
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:17:25
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produto/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf4343b59256_40650387',
-=======
-  'unifunc' => 'content_56ce5b2e3dd5a3_43769070',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf6f65078d00_40799410',
   'file_dependency' => 
   array (
     'a4ee5eac68894fd2f0a0367e79ead3ad616c155d' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produto/new.tpl',
-      1 => 1456332646,
+      1 => 1456435038,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf4343b59256_40650387 ($_smarty_tpl) {
-=======
-function content_56ce5b2e3dd5a3_43769070 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf6f65078d00_40799410 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +57,7 @@ function content_56ce5b2e3dd5a3_43769070 ($_smarty_tpl) {
                                     <label for="name">Produto</label>
                                     <input type="input" class="form-control" id="name" name="name" required>
                                     <label for="status">Status</label>
-                                    <select class="form-control" id="status" name="status">
+                                    <select class="form-control" id="status" name="status" required>
                                         <option value=""></option>
                                         <?php
 $_from = $_smarty_tpl->tpl_vars['listastatusprod']->value;
@@ -95,7 +83,7 @@ $_smarty_tpl->tpl_vars['lista'] = $__foreach_lista_0_saved_item;
 ?>
                                     </select>
                                     <label for="depto">Departamento</label>
-                                    <select class="form-control" id="departamento" name="departamento">
+                                    <select class="form-control" id="departamento" name="departamento" required>
                                     <option value=""></option>
                                         <?php
 $_from = $_smarty_tpl->tpl_vars['listadeptoprod']->value;
@@ -122,7 +110,7 @@ $_smarty_tpl->tpl_vars['lista'] = $__foreach_lista_1_saved_item;
                                     </select>
                                     <br>
                                     <label for="name">Quantidade</label>
-                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" required>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>
                             </form>

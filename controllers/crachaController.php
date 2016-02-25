@@ -50,15 +50,13 @@ class cracha extends controller {
 
             if ($crachares) {
                 $this->smarty->assign('error', 'O crachá já foi emitido!');
-                  $crachas_res = $modelcracha->getCracha();
-                 $this->smarty->assign('listcracha', $crachas_res);
+                   $this->smarty->assign('paginador', $this->mostraGrid());
                 $this->smarty->display('cracha/index.tpl');
             } else {
 
                 $this->smarty->assign('error', 'O cliente não participa de nenhum evento, portanto não é possível emitir o crachá!');
                
-                $crachas_res = $modelcracha->getCracha();
-                 $this->smarty->assign('listcracha', $crachas_res);
+                 $this->smarty->assign('paginador', $this->mostraGrid());
                 $this->smarty->display('cracha/index.tpl');
             }
         }
@@ -108,6 +106,17 @@ class cracha extends controller {
     
     public function paginacao() {
         $this->index_action($this->getParam('pagina'));
+    }
+    
+    public function add() {
+        //chama cliente
+        $model_cliente = new clienteModel();
+        $cliente_res = $model_cliente->getCliente(); //Full table Scan :( or :)         
+        //send the records to template sytem
+        $this->smarty->assign('listcliente', $cliente_res);
+        
+        $this->smarty->assign('title', 'Nova Emissão');
+        $this->smarty->display('cracha/new.tpl');
     }
 
 

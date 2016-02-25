@@ -28,7 +28,7 @@
                                 <input type="hidden" class="form-control" id="id" name="id" value="{$registro.codigo}">
                                 <div class="form-group">
                                     <label for="cliente">Cliente</label>                                    
-                                    <select class="form-control" name = "cliente" id = "cliente">
+                                    <select class="form-control" name = "cliente" id = "cliente" required>
                                         <option value="{$registro.id_cliente}">{$registro.cliente}</option>
                                         {foreach from=$listcliente item=linha}
                                             {if $linha.codigo neq $registro.id_cliente}   
@@ -38,7 +38,7 @@
                                     </select>
                                     <br>
                                     <label for="evento">Evento</label>                                    
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                         <option value="{$registro.id_evento}">{$registro.evento}</option>
                                         {foreach from=$listevento item=linha}
                                             {if $linha.codigo neq $registro.id_evento}   
@@ -48,7 +48,7 @@
                                     </select>
                                     <br>
                                     <label for="datahora">Data/Hora</label>
-                                    <input type="input" class="form-control" id="datahora" name="datahora" value="{$registro.data_hora | date_format: '%d/%m/%Y %H:%M:$S'}">
+                                    <input type="input" class="form-control" id="datahora" name="datahora" value="{$registro.data_hora | date_format: '%d/%m/%Y %H:%M:$S'}" required>
                                     <br>
                                     <label for="datahora">Arquivo (não é possível alterar o arquivo)</label>
                                     <br>

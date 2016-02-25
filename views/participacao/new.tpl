@@ -25,7 +25,7 @@
                             <form role="form" action="/participacao/save/" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="cliente">Cliente</label>
-                                    <select class="form-control" name = "cliente" id = "cliente">
+                                    <select class="form-control" name = "cliente" id = "cliente" required>
                                         <option value=""></option>
                                         {foreach from=$listcliente item=linha}
                                             <option value="{$linha.codigo}">{$linha.nome}</option>
@@ -33,7 +33,7 @@
                                     </select >
                                     <br>
                                     <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                         <option value=""></option>
                                         {foreach from=$listevento item=linha}
                                             <option value="{$linha.codigo}">{$linha.descricao}</option>

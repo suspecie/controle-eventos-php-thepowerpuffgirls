@@ -28,7 +28,7 @@
                                     <input type="input" class="form-control" id="descricao" name="descricao" required>
                                     <br>
                                     <label for="estado">Estado</label>
-                                     <select class="form-control" name = "estado" id = "id_estado">
+                                     <select class="form-control" name = "estado" id = "id_estado" required>
                                          <option value=""></option>
                                        {foreach from=$listestado item=linha}
                                              <option value="{$linha.codigo}">{$linha.estado}</option>

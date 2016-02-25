@@ -27,7 +27,7 @@
 
                                 <div class="form-group">
                                     <label for="descricao">Descrição</label>
-                                    <input required="true" type="input" class="form-control" id="descricao" name="descricao" value="{$registro.descricao}">
+                                    <input required="true" type="input" class="form-control" id="descricao" name="descricao" value="{$registro.descricao}" required>
                                 </div>  
                                 <button type="submit" class="btn btn-default">Atualizar</button>
                             </form>

@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 15:26:56
-=======
-/* Smarty version 3.1.29, created on 2016-02-25 09:43:44
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:43:02
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/participacao/newmoredetails.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf477088d720_89088376',
-=======
-  'unifunc' => 'content_56cef700aaedf2_23752459',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf75662cf5b7_34825546',
   'file_dependency' => 
   array (
     '20af965b2a16e4c4c1877687d6c2b99077f377c8' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/participacao/newmoredetails.tpl',
-      1 => 1456398000,
+      1 => 1456436561,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf477088d720_89088376 ($_smarty_tpl) {
-=======
-function content_56cef700aaedf2_23752459 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf75662cf5b7_34825546 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once '/var/www/html/controle-eventos-php-thepowerpuffgirls/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
 ?>
 <!DOCTYPE html>
@@ -71,7 +59,7 @@ if (!is_callable('smarty_modifier_date_format')) require_once '/var/www/html/con
 ">
                                 <div class="form-group">
                                     <label for="cliente">Cliente</label>                                    
-                                    <select class="form-control" name = "cliente" id = "cliente">
+                                    <select class="form-control" name = "cliente" id = "cliente" required>
                                         <option value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['id_cliente'];?>
 "><?php echo $_smarty_tpl->tpl_vars['registro']->value['cliente'];?>
 </option>
@@ -102,7 +90,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_0_saved_item;
                                     </select>
                                     <br>
                                     <label for="evento">Evento</label>                                    
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                         <option value="<?php echo $_smarty_tpl->tpl_vars['registro']->value['id_evento'];?>
 "><?php echo $_smarty_tpl->tpl_vars['registro']->value['evento'];?>
 </option>
@@ -134,7 +122,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_1_saved_item;
                                     <br>
                                     <label for="datahora">Data/Hora</label>
                                     <input type="input" class="form-control" id="datahora" name="datahora" value="<?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['registro']->value['data_hora'],"%d/%m/%Y %H:%M:%S");?>
-">
+" readonly="readonly">
                                     <br>
                                 </div>  
                             </form>

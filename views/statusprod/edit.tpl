@@ -27,7 +27,7 @@
 
                                 <div class="form-group">
                                     <label for="name">Status</label>
-                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.status_prod}">
+                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.status_prod}" required>
                                 </div>  
                                 
                                 <button type="submit" class="btn btn-default">Alterar</button>

@@ -25,7 +25,7 @@
                             <form role="form" action="/produtoevento/save" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                    <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                         <option value=""></option>
                                         {foreach from=$listevento item=linha}
                                             <option value="{$linha.codigo}">{$linha.descricao}</option>
@@ -33,7 +33,7 @@
                                     </select >
                                     <br>
                                     <label for="cliente">Produto</label>
-                                    <select class="form-control" name = "produto" id = "produto">
+                                    <select class="form-control" name = "produto" id = "produto" required>
                                         <option value=""></option>
                                         {foreach from=$listproduto item=linha}
                                             <option value="{$linha.codigo}">{$linha.produto}</option>
@@ -41,7 +41,7 @@
                                     </select >
                                     <br>
                                     <label for="cliente">Quantidade</label>
-                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" required>
                                     <br>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>

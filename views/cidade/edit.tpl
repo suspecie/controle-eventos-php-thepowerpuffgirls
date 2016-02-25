@@ -27,11 +27,11 @@
 
                                 <div class="form-group">
                                     <label for="descricao">Descrição</label>
-                                    <input required="true" type="input" class="form-control" id="descricao" name="descricao" value="{$registro.descricao}">
+                                    <input required="true" type="input" class="form-control" id="descricao" name="descricao" value="{$registro.descricao}" required>
                                     <br>
                                     <div class="form-group">
                                         <label for="estado">Estado</label>
-                                        <select class="form-control" name = "estado" id = "estado">
+                                        <select class="form-control" name = "estado" id = "estado" required>
                                             <option value="{$registro.id_estado}">{$registro.estado}</option>
                                             {foreach from=$listestado item=linha}
                                                 {if $linha.codigo neq $registro.id_estado}   

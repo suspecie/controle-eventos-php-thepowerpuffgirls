@@ -27,14 +27,14 @@
                                     <label for="name">Produto</label>
                                     <input type="input" class="form-control" id="name" name="name" required>
                                     <label for="status">Status</label>
-                                    <select class="form-control" id="status" name="status">
+                                    <select class="form-control" id="status" name="status" required>
                                         <option value=""></option>
                                         {foreach from=$listastatusprod item=lista}
                                         <option value={$lista.codigo}>{$lista.status_prod}</option>
                                         {/foreach}
                                     </select>
                                     <label for="depto">Departamento</label>
-                                    <select class="form-control" id="departamento" name="departamento">
+                                    <select class="form-control" id="departamento" name="departamento" required>
                                     <option value=""></option>
                                         {foreach from=$listadeptoprod item=lista}
                                         <option value={$lista.codigo}>{$lista.departamento}</option>
@@ -42,7 +42,7 @@
                                     </select>
                                     <br>
                                     <label for="name">Quantidade</label>
-                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" required>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>
                             </form>

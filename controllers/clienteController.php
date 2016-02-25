@@ -87,15 +87,11 @@ class cliente extends controller {
         $dados['codigo'] = $id;
         $delete = $modelcliente->delCliente($dados);
         if (!$delete) {
-            $clientes_res = $modelcliente->getCliente(''); //Full table Scan :( or :)         
-            //send the records to template sytem
-            $this->smarty->assign('listcliente', $clientes_res);
+            $this->smarty->assign('paginador', $this->mostraGrid());
             $this->smarty->assign('error', 'Desculpe, não é possível excluir o cliente, pois o cliente está cadastrado em um evento!');
         }
 
-        $clientes_res = $modelcliente->getCliente(''); //Full table Scan :( or :)         
-        //send the records to template sytem
-        $this->smarty->assign('listcliente', $clientes_res);
+        $this->smarty->assign('paginador', $this->mostraGrid());
         $this->smarty->display('cliente/index.tpl');
     }
     

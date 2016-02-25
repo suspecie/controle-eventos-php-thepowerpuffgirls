@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 14:58:29
-=======
-/* Smarty version 3.1.29, created on 2016-02-25 09:25:14
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:35:47
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/evento/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf40c548ac29_44869219',
-=======
-  'unifunc' => 'content_56cef2aa5e9835_06671254',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf73b3282dd5_22676674',
   'file_dependency' => 
   array (
     '9ca036ebc82d730139874b6501e6bf4e963489c0' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/evento/new.tpl',
-      1 => 1456230499,
+      1 => 1456434519,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf40c548ac29_44869219 ($_smarty_tpl) {
-=======
-function content_56cef2aa5e9835_06671254 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf73b3282dd5_22676674 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +58,7 @@ function content_56cef2aa5e9835_06671254 ($_smarty_tpl) {
                                     <input type="input" class="form-control" id="descricao" name="descricao" required>
                                     <br>
                                     <label for="cidade">Cidade</label>
-                                     <select class="form-control" name = "cidade" id = "cidade">
+                                     <select class="form-control" name = "cidade" id = "cidade" required>
                                          <option value=""></option>
                                        <?php
 $_from = $_smarty_tpl->tpl_vars['listscidade']->value;
@@ -97,7 +85,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_0_saved_item;
                                     </select >
                                     <br>
                                     <label for="status">Status</label>
-                                    <select class="form-control" name = "status" id = "status">
+                                    <select class="form-control" name = "status" id = "status" required>
                                          <option value=""></option>
                                        <?php
 $_from = $_smarty_tpl->tpl_vars['liststatusevento']->value;
@@ -121,7 +109,7 @@ if ($__foreach_linha_1_saved_item) {
 $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_1_saved_item;
 }
 ?>
-                                    </select >
+                                    </select>
                                     <br>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>

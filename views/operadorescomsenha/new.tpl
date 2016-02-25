@@ -31,7 +31,7 @@
                                     <input type="password" class="form-control" id="senha" name="senha" required>
                                     
                                     <label for="tipo_acesso">Tipo de Acesso</label>                                    
-                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso">
+                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso" required>
                                          <option value=""></option>
                                        {foreach from=$listtipoacesso item=linha}
                                              <option value="{$linha.codigo}">{$linha.acessodescricao}</option>

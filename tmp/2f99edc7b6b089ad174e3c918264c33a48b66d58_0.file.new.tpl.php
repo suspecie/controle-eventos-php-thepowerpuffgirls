@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 15:19:27
-=======
-/* Smarty version 3.1.29, created on 2016-02-24 22:40:58
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:39:34
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf45af534f13_85159786',
-=======
-  'unifunc' => 'content_56ce5baa3e9317_31782990',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf7496f3f204_57222770',
   'file_dependency' => 
   array (
     '2f99edc7b6b089ad174e3c918264c33a48b66d58' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/new.tpl',
-      1 => 1456334014,
+      1 => 1456435167,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf45af534f13_85159786 ($_smarty_tpl) {
-=======
-function content_56ce5baa3e9317_31782990 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf7496f3f204_57222770 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +55,7 @@ function content_56ce5baa3e9317_31782990 ($_smarty_tpl) {
                             <form role="form" action="/produtoevento/save" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                    <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
+                                    <select class="form-control" name = "evento" id = "evento" required>
                                         <option value=""></option>
                                         <?php
 $_from = $_smarty_tpl->tpl_vars['listevento']->value;
@@ -94,7 +82,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_0_saved_item;
                                     </select >
                                     <br>
                                     <label for="cliente">Produto</label>
-                                    <select class="form-control" name = "produto" id = "produto">
+                                    <select class="form-control" name = "produto" id = "produto" required>
                                         <option value=""></option>
                                         <?php
 $_from = $_smarty_tpl->tpl_vars['listproduto']->value;
@@ -121,7 +109,7 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_1_saved_item;
                                     </select >
                                     <br>
                                     <label for="cliente">Quantidade</label>
-                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" required>
                                     <br>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>

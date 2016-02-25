@@ -28,7 +28,7 @@
                                     <input type="input" class="form-control" id="descricao" name="descricao" required>
                                     <br>
                                     <label for="cidade">Cidade</label>
-                                     <select class="form-control" name = "cidade" id = "cidade">
+                                     <select class="form-control" name = "cidade" id = "cidade" required>
                                          <option value=""></option>
                                        {foreach from=$listscidade item=linha}
                                              <option value="{$linha.codigo}">{$linha.descricao}</option>
@@ -36,12 +36,12 @@
                                     </select >
                                     <br>
                                     <label for="status">Status</label>
-                                    <select class="form-control" name = "status" id = "status">
+                                    <select class="form-control" name = "status" id = "status" required>
                                          <option value=""></option>
                                        {foreach from=$liststatusevento item=linha}
                                              <option value="{$linha.codigo}">{$linha.descricao}</option>
                                        {/foreach}
-                                    </select >
+                                    </select>
                                     <br>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 17:52:52
+/* Smarty version 3.1.29, created on 2016-02-25 18:39:26
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/index/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf69a49e0951_63393538',
+  'unifunc' => 'content_56cf748ed7b9f1_62036697',
   'file_dependency' => 
   array (
     'db2bf4dba538f5d60b51414935df732f770d4f27' => 
@@ -21,7 +21,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56cf69a49e0951_63393538 ($_smarty_tpl) {
+function content_56cf748ed7b9f1_62036697 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -27,14 +27,14 @@
 
                                 <div class="form-group">
                                    <label for="nome">Nome</label>
-                                    <input required="true" type="input" class="form-control" id="nome" name="nome" value="{$registro.nome}">
+                                    <input required="true" type="input" class="form-control" id="nome" name="nome" value="{$registro.nome}" required>
                                
                                      <label for="senha">Senha</label>
-                                    <input required="true" type="password" class="form-control" id="senha" name="senha" value="{$registro.senha}">
+                                    <input required="true" type="password" class="form-control" id="senha" name="senha" value="{$registro.senha}" required>
                                                                        
                                     
                                     <label for="tipo_acesso">Tipo de Acesso</label>
-                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso">
+                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso" required>
                                          <option value="{$registro.tipo_acesso}">{$registro.acessodescricao}</option>
                                             {foreach from=$listtipoacesso item=linha}
                                                 {if $linha.codigo neq $registro.tipo_acesso}   

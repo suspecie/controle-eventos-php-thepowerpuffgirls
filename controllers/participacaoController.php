@@ -259,9 +259,7 @@ class participacao extends controller {
 
 
         if ($verificaseexiste) {
-            $participacoes_res = $modelparticipacao->getParticipacao(''); //Full table Scan :( or :)   
-            //send the records to template sytem
-            $this->smarty->assign('listparticipacao', $participacoes_res);
+            $this->smarty->assign('paginador', $this->mostraGrid());
             $this->smarty->assign('error', 'O cliente já participa deste evento!');
             $this->smarty->display('participacao/index.tpl');
 

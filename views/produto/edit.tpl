@@ -26,9 +26,9 @@
                                 <input type="hidden" class="form-control" id="id" name="id" value="{$registro.codigo}">
                                 <div class="form-group">
                                     <label for="name">Produto</label>
-                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.produto}">
+                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.produto}" required>
                                     <label for="status">Status</label>
-                                    <select class="form-control" id="status" name="status">
+                                    <select class="form-control" id="status" name="status" required>
                                         <option value="{$registro.id_status}">{$registro.status_prod}</option>
                                         {foreach from=$listastatusprod item=lista}
                                             {if $lista.codigo neq $registro.id_status}
@@ -38,7 +38,7 @@
                                     </select>
                                     <br>
                                     <label for="depto">Departamento</label>
-                                    <select class="form-control" id="departamento" name="departamento">
+                                    <select class="form-control" id="departamento" name="departamento" required>
                                         <option value="{$registro.codigo_departamento}">{$registro.departamento}</option>
                                         {foreach from=$listadeptoprod item=lista}
                                             {if $lista.codigo neq $registro.codigo_departamento}
@@ -48,7 +48,7 @@
                                     </select>
                                     <br>
                                     <label for="depto">Quantidade</label>
-                                    <input type="text" class="form-control" id="quantidade" name="quantidade" value="{$registro.qtd_total}">
+                                    <input type="number" class="form-control" id="quantidade" name="quantidade" value="{$registro.qtd_total}" required>
                                 </div>
                                 <button type="submit" class="btn btn-default">Alterar</button>
                             </form>

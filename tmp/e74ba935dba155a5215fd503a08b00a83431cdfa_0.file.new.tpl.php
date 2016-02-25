@@ -1,25 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-02-25 14:05:34
-=======
-/* Smarty version 3.1.29, created on 2016-02-24 21:45:55
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+/* Smarty version 3.1.29, created on 2016-02-25 18:14:35
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/operadorescomsenha/new.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_56cf345e142550_28248873',
-=======
-  'unifunc' => 'content_56ce4ec316f932_16248226',
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+  'unifunc' => 'content_56cf6ebb94fee5_99002158',
   'file_dependency' => 
   array (
     'e74ba935dba155a5215fd503a08b00a83431cdfa' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/operadorescomsenha/new.tpl',
-      1 => 1456230499,
+      1 => 1456434870,
       2 => 'file',
     ),
   ),
@@ -30,11 +22,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_56cf345e142550_28248873 ($_smarty_tpl) {
-=======
-function content_56ce4ec316f932_16248226 ($_smarty_tpl) {
->>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
+function content_56cf6ebb94fee5_99002158 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +61,7 @@ function content_56ce4ec316f932_16248226 ($_smarty_tpl) {
                                     <input type="password" class="form-control" id="senha" name="senha" required>
                                     
                                     <label for="tipo_acesso">Tipo de Acesso</label>                                    
-                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso">
+                                    <select class="form-control" name = "tipo_acesso" id = "tipo_acesso" required>
                                          <option value=""></option>
                                        <?php
 $_from = $_smarty_tpl->tpl_vars['listtipoacesso']->value;

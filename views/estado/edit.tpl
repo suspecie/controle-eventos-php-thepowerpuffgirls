@@ -27,7 +27,7 @@
 
                                 <div class="form-group">
                                     <label for="name">Estado</label>
-                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.estado}">
+                                    <input required="true" type="input" class="form-control" id="name" name="name" value="{$registro.estado}" required>
                                 </div>  
                                 
                                 <button type="submit" class="btn btn-default">Alterar</button>
