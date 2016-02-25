@@ -9,13 +9,12 @@ class produto extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_produtos = new produtoModel();
-        $produtos_res = $model_produtos->getProduto(''); //Full table Scan :( or :)         
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());  
         //send the records to template sytem
-        $this->smarty->assign('listproduto', $produtos_res);
         $this->smarty->assign('title', 'Produto');
         //call the smarty
         $this->smarty->display('produto/index.tpl');

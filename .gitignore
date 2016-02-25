@@ -1,4 +1,8 @@
 /tmp/
 /nbproject/private/
 /files/fotos/*
+<<<<<<< HEAD
 /files/arquivos/*
+=======
+/files/arquivo/*
+>>>>>>> 3e731182e8c1a9c7aa552c9c964d4397f2ec66b8

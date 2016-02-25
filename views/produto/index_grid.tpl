@@ -26,3 +26,4 @@
         {/foreach}          
     </tbody>
 </table>
+    {$paginador}

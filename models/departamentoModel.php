@@ -3,7 +3,9 @@
  * Data that needs to be copied in news Model Entitys
  */
 
-
+/**
+ * Oi :)
+ */
 class departamentoModel extends model {
     
     var $tabPadrao = 'departamentos';
@@ -19,9 +21,9 @@ class departamentoModel extends model {
 
     
     /** Retrieve the Entity */
-    public function getDepartamento($where = null) {
+    public function getDepartamento($where = null, $limit = null) {
         $select = array('*');
-        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+        return $this->read($this->tabPadrao, $select, $where, null, $limit, null, null);
     }
 
     /** Save a new Entity  */

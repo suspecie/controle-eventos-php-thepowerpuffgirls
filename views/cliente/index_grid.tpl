@@ -34,4 +34,10 @@
     <div class="col-md-4">
         <h4>{if isset($error)}{$error}{/if}</h4>
     </div>  
+<<<<<<< HEAD
 </div> 
+=======
+</div> 
+{$paginador}
+
+>>>>>>> 3e731182e8c1a9c7aa552c9c964d4397f2ec66b8
