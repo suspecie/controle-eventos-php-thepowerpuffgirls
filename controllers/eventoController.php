@@ -1,13 +1,14 @@
 <?php
 
 class evento extends controller {
-   
+
     public function __construct() {
         parent::__construct();
         include 'controllers/loginController.php';
         $valida = new login();
         $valida->sessao_valida();
     }
+
     
     public function index_action($pagina = 1)  {
         
@@ -15,7 +16,6 @@ class evento extends controller {
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 
-       
         $this->smarty->assign('title', 'Eventos');
         //call the smarty
         $this->smarty->display('evento/index.tpl');
@@ -27,13 +27,13 @@ class evento extends controller {
         $statuseventos_res = $model_statuseventos->getStatusEvento(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('liststatusevento', $statuseventos_res);
-        
+
         //list all records
         $model_cidade = new cidadeModel();
         $cidade_res = $model_cidade->getCidade(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listscidade', $cidade_res);
-        
+
         $this->smarty->assign('title', 'Novo Evento');
         $this->smarty->display('evento/new.tpl');
     }
@@ -43,6 +43,8 @@ class evento extends controller {
         $dados['descricao'] = $_POST['descricao'];
         $dados['id_cidade'] = $_POST['cidade'];
         $dados['id_status'] = $_POST['status'];
+        var_dump($dados);
+
         $modelevento->setEvento($dados);
 
         header('Location: /evento');
@@ -50,7 +52,7 @@ class evento extends controller {
 
     public function update() {
         $id = $this->getParam('id');
-   
+
         $modelevento = new eventoModel();
         $dados['codigo'] = $id;
         $dados['descricao'] = $_POST['descricao'];
@@ -72,25 +74,25 @@ class evento extends controller {
     }
 
     public function edit() {
-       
+
         //die();
         $id = $this->getParam('id');
         $modelevento = new eventoModel();
         $resevento = $modelevento->getEvento('e.codigo=' . $id);
         $this->smarty->assign('registro', $resevento[0]);
-        
+
         $model_statuseventos = new statuseventoModel();
         $statuseventos_res = $model_statuseventos->getStatusEvento(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('liststatusevento', $statuseventos_res);
-        
+
         //list all records
         $model_cidade = new cidadeModel();
         $cidade_res = $model_cidade->getCidade(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listscidade', $cidade_res);
-        
-        
+
+
         $this->smarty->assign('title', 'Detalhes dos Eventos');
         //call the smarty
         $this->smarty->display('evento/edit.tpl');
@@ -137,8 +139,6 @@ class evento extends controller {
         $this->index_action($this->getParam('pagina'));
     }
 
-    
-    
 }
 
 ?>

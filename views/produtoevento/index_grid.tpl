@@ -23,5 +23,7 @@
             <tr><td colspan="100%">Nenhum Registro</td></tr>
         {/foreach}          
     </tbody>
+
 </table>
 {$paginador}
+

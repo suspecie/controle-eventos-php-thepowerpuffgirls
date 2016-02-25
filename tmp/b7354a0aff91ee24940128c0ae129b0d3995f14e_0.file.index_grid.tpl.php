@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 14:32:09
+/* Smarty version 3.1.29, created on 2016-02-25 17:51:47
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/estado/index_grid.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf3a99576c50_41466908',
+  'unifunc' => 'content_56cf6963569ba3_99367757',
   'file_dependency' => 
   array (
     'b7354a0aff91ee24940128c0ae129b0d3995f14e' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/estado/index_grid.tpl',
-      1 => 1456418915,
+      1 => 1456433131,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cf3a99576c50_41466908 ($_smarty_tpl) {
+function content_56cf6963569ba3_99367757 ($_smarty_tpl) {
 ?>
 <table class="table table-striped">
     <thead>
@@ -67,7 +67,10 @@ $_smarty_tpl->tpl_vars['linha'] = $__foreach_linha_0_saved_item;
 }
 ?>          
     </tbody>
+
 </table>
-<?php echo $_smarty_tpl->tpl_vars['paginador']->value;
-}
+<?php echo $_smarty_tpl->tpl_vars['paginador']->value;?>
+
+
+<?php }
 }

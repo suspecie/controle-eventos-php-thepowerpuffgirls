@@ -1,13 +1,14 @@
 <?php
 
 class departamento extends controller {
-    
+
     public function __construct() {
         parent::__construct();
         include 'controllers/loginController.php';
         $valida = new login();
         $valida->sessao_valida();
     }
+
    
     public function index_action($pagina = 1) {
         
@@ -57,7 +58,7 @@ class departamento extends controller {
     }
 
     public function edit() {
-       
+
         //die();
         $id = $this->getParam('id');
         $modeldepartamento = new departamentoModel();

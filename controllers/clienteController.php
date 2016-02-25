@@ -13,13 +13,15 @@ class cliente extends controller {
 
         //list all records
         $_SESSION['pagina'] = $pagina;
+
         $this->smarty->assign('paginador', $this->mostraGrid());
         
         $this->smarty->assign('title', 'Cliente');
         //call the smarty
         $this->smarty->display('cliente/index.tpl');
+        
     }
-
+    
     public function add() {
         $this->smarty->assign('title', 'Novo Cliente');
         $this->smarty->display('cliente/new.tpl');

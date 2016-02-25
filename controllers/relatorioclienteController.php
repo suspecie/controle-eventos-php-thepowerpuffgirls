@@ -5,6 +5,7 @@ class relatoriocliente extends controller {
     public function index_action($pagina = 1) {
         
         //list all records
+
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 
@@ -14,18 +15,19 @@ class relatoriocliente extends controller {
         $this->smarty->display('relatoriocliente/index.tpl');
     }
 
+
      public function buscar($pagina = 1) {
          
          //list all records
         $_SESSION['pagina'] = $pagina;
        
-        
         $model = new model();
 
         $this->smarty->assign('title', 'Participantes');
         $this->smarty->assign('listcliente', null);
 
         if (isset($_POST['nome'])) {
+
             
             $sql = 'c.codigo>0 ';
             
@@ -49,8 +51,6 @@ class relatoriocliente extends controller {
                 $des_evento = $_POST['rg'];
                 $sql .= " AND c.rg LIKE '%$des_evento%'";
             }
-            
-            
             
             //list all records
             $model_relatoriocliente = new relatorioclienteModel();
@@ -93,6 +93,7 @@ class relatoriocliente extends controller {
     public function paginacao() {
         $this->index_action($this->getParam('pagina'));
     }
+
 
 }
 

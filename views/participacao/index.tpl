@@ -23,6 +23,7 @@
                             <h1>Participação</h1>
                             <p>Este cadastro irá inserir a participação do cliente no evento.</p>                            
                             <a href="/participacao/add" class="btn btn-default" id="btn_novo">Nova Participação</a>
+
                             <br>
                             {include file="participacao/index_grid.tpl"}
                         </div>

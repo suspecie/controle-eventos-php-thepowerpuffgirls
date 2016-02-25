@@ -9,6 +9,7 @@ class produtoevento extends controller {
         $valida->sessao_valida();
     }
     
+
     public function index_action($pagina = 1) {
 
         //list all records
@@ -112,6 +113,7 @@ class produtoevento extends controller {
 
         header('Location: /produtoevento');
     }
+
     
     public function mostraGrid(){
         $total_reg = "10"; // número de registros por página

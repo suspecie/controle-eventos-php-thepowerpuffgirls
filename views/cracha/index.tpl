@@ -23,6 +23,7 @@
                             <h1>Emissão de Crachá</h1>
                             <p>Este cadastro irá emitir o crachá do cliente que participará do evento.</p>                            
                             <a href="/cracha/add" class="btn btn-default" id="btn_novo">Nova Emissão</a>
+
                             <br>
                             {include file="cracha/index_grid.tpl"}
                         </div>

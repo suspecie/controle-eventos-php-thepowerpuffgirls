@@ -6,9 +6,10 @@ class participacao extends controller {
 
         //list all records
         $_SESSION['pagina'] = $pagina;
+
         $this->smarty->assign('paginador', $this->mostraGrid());
 
-        
+       
         $this->smarty->assign('title', 'Participações');
         //call the smarty
         $this->smarty->display('participacao/index.tpl');
@@ -161,8 +162,7 @@ class participacao extends controller {
         }
         $modelarquivo->delArquivo($dados);
 
-        
-        
+
         //apaga as fotos
         $modelfoto = new fotoModel();
         $dados['id_evento_cliente'] = $id;
@@ -316,8 +316,7 @@ class participacao extends controller {
         $this->index_action($this->getParam('pagina'));
     }
     
-    
-    
+ 
 
 }
 

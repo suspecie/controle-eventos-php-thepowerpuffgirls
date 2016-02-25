@@ -23,6 +23,7 @@
                             <h1>Vincular Produto ao Evento</h1>
                             <p>Este cadastro irá inserir a quantidade de produto e quais produtos serão entregues no evento.s</p>                            
                             <a href="/produtoevento/add" class="btn btn-default" id="btn_novo">Nova Vinculação</a>
+
                             <br>
                             {include file="produtoevento/index_grid.tpl"}
                         </div>

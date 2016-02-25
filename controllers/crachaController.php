@@ -9,13 +9,14 @@ class cracha extends controller {
         $valida->sessao_valida();
     }
 
+
     public function index_action($pagina = 1) {
         
         //list all records
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 
-       
+      
         $this->smarty->assign('title', 'Cracha');
         //call the smarty
         $this->smarty->display('cracha/index.tpl');
@@ -74,6 +75,7 @@ class cracha extends controller {
 
         header('Location: /cracha');
     }
+
     
     
     public function mostraGrid(){
@@ -107,6 +109,7 @@ class cracha extends controller {
     public function paginacao() {
         $this->index_action($this->getParam('pagina'));
     }
+
 
 }
 

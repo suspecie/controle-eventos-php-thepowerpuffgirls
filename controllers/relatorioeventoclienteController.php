@@ -5,10 +5,12 @@ class relatorioeventocliente extends controller {
     public function index_action($pagina = 1) {
         
         //list all records
+
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 
         
+
         $this->smarty->assign('title', 'Relatorio Evento Cliente');
         //call the smarty
         $this->smarty->display('relatorioeventocliente/index.tpl');
@@ -89,6 +91,7 @@ class relatorioeventocliente extends controller {
     
     
     
+
 }
 
 ?>

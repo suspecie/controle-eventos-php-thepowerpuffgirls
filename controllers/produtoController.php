@@ -13,7 +13,9 @@ class produto extends controller {
 
         //list all records
         $_SESSION['pagina'] = $pagina;
+
         $this->smarty->assign('paginador', $this->mostraGrid());
+
 
         $this->smarty->assign('title', 'Produto');
         //call the smarty

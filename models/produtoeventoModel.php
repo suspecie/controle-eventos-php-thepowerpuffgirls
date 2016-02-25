@@ -61,6 +61,7 @@ class produtoeventoModel extends model {
         $this->commit();
         return true;
     }
+
     
      /** Retrieve the Entity */
     public function getCountProdutoEvento($where = null) {
@@ -77,6 +78,7 @@ class produtoeventoModel extends model {
         $limit = $inicio . ','. $total_reg;
         return $this->read($tables, $select, $where, null, $limit, null, null);
     }
+
 
 }
 

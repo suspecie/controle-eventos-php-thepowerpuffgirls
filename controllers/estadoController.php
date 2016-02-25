@@ -10,16 +10,17 @@ class estado extends controller {
     }
     
     public function index_action($pagina = 1) {
+
          //list all records
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 
-       
+        
         $this->smarty->assign('title', 'Estado');
         //call the smarty
         $this->smarty->display('estado/index.tpl');
     }
-
+    
     public function add() {
         $this->smarty->assign('title', 'Novo Estado');
         $this->smarty->display('estado/new.tpl');        

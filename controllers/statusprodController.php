@@ -12,6 +12,7 @@ class statusProd extends controller {
     public function index_action($pagina = 1) {
 
         //list all records
+
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
 

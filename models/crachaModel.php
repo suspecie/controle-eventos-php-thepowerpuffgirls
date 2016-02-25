@@ -67,6 +67,7 @@ class crachaModel extends model {
         $this->commit();
         return true;
     }
+
     
      /** Retrieve the Entity */
     public function getCountCracha($where = null) {

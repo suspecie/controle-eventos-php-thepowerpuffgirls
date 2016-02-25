@@ -10,14 +10,18 @@ class cidade extends controller {
     }
     
     public function index_action($pagina = 1) {
+
         
         //list all records
         $_SESSION['pagina'] = $pagina;
         $this->smarty->assign('paginador', $this->mostraGrid());
-
+        
+        
         $this->smarty->assign('title', 'Cidade');
         //call the smarty
         $this->smarty->display('cidade/index.tpl');
+        
+        
     }
 
     public function add() {

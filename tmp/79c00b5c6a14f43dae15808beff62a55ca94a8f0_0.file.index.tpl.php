@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 15:19:43
+/* Smarty version 3.1.29, created on 2016-02-25 17:55:03
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf45bfbad0c1_89235618',
+  'unifunc' => 'content_56cf6a276f2405_62508470',
   'file_dependency' => 
   array (
     '79c00b5c6a14f43dae15808beff62a55ca94a8f0' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/produtoevento/index.tpl',
-      1 => 1456423822,
+      1 => 1456433198,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56cf45bfbad0c1_89235618 ($_smarty_tpl) {
+function content_56cf6a276f2405_62508470 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +54,7 @@ function content_56cf45bfbad0c1_89235618 ($_smarty_tpl) {
                             <h1>Vincular Produto ao Evento</h1>
                             <p>Este cadastro irá inserir a quantidade de produto e quais produtos serão entregues no evento.s</p>                            
                             <a href="/produtoevento/add" class="btn btn-default" id="btn_novo">Nova Vinculação</a>
+
                             <br>
                             <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:produtoevento/index_grid.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

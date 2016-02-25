@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 14:53:00
+/* Smarty version 3.1.29, created on 2016-02-25 17:54:17
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/statusevento/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf3f7c9fbb55_70648271',
+  'unifunc' => 'content_56cf69f96fce92_22540435',
   'file_dependency' => 
   array (
     'ab905d58ade6cdcbcaf1376a07b80f0ca33850d5' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/statusevento/index.tpl',
-      1 => 1456359481,
+      1 => 1456433275,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56cf3f7c9fbb55_70648271 ($_smarty_tpl) {
+function content_56cf69f96fce92_22540435 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@ function content_56cf3f7c9fbb55_70648271 ($_smarty_tpl) {
                         <div class="col-lg-12">
                             <h1>Status do Evento</h1>
                             <p>Este cadastro irá inserir os status do evento.</p>                            
-                            <a href="/statusevento/add" class="btn btn-default" id="btn_novo">Novo</a>
+                            <a href="/statusevento/add" class="btn btn-default" id="btn_novo">Novo Status</a>
                             <br>
                             <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:statusevento/index_grid.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

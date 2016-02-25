@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.29, created on 2016-02-25 15:26:56
+=======
+/* Smarty version 3.1.29, created on 2016-02-25 09:43:44
+>>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/participacao/newmoredetails.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
+<<<<<<< HEAD
   'unifunc' => 'content_56cf477088d720_89088376',
+=======
+  'unifunc' => 'content_56cef700aaedf2_23752459',
+>>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
   'file_dependency' => 
   array (
     '20af965b2a16e4c4c1877687d6c2b99077f377c8' => 
@@ -22,7 +30,11 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_56cf477088d720_89088376 ($_smarty_tpl) {
+=======
+function content_56cef700aaedf2_23752459 ($_smarty_tpl) {
+>>>>>>> de42b654468e019ff46ea6ad1f56c87074b995c1
 if (!is_callable('smarty_modifier_date_format')) require_once '/var/www/html/controle-eventos-php-thepowerpuffgirls/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
 ?>
 <!DOCTYPE html>

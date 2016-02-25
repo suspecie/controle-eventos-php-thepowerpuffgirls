@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 15:29:05
+/* Smarty version 3.1.29, created on 2016-02-25 17:55:04
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/participacao/index.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf47f13138c0_64570454',
+  'unifunc' => 'content_56cf6a28e835d2_34676456',
   'file_dependency' => 
   array (
     '85abf7d9e33fe75a8d0150e72c0d03ddf15d3d72' => 
     array (
       0 => '/var/www/html/controle-eventos-php-thepowerpuffgirls/views/participacao/index.tpl',
-      1 => 1456424939,
+      1 => 1456433690,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:comum/footer.tpl' => 1,
   ),
 ),false)) {
-function content_56cf47f13138c0_64570454 ($_smarty_tpl) {
+function content_56cf6a28e835d2_34676456 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +54,7 @@ function content_56cf47f13138c0_64570454 ($_smarty_tpl) {
                             <h1>Participação</h1>
                             <p>Este cadastro irá inserir a participação do cliente no evento.</p>                            
                             <a href="/participacao/add" class="btn btn-default" id="btn_novo">Nova Participação</a>
+
                             <br>
                             <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:participacao/index_grid.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

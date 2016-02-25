@@ -72,7 +72,7 @@ class cidadeModel extends model {
     
     
     /** Retrieve the Entity */
-    public function getRelatorioclienteLimit($where = null, $inicio = null, $total_reg = null) {
+    public function getCidadeLimit($where = null, $inicio = null, $total_reg = null) {
         $select = array('c.*','e.estado as estado');
         $tables = "cidade c left join estado e on (c.id_estado = e.codigo)";
         $limit = $inicio . ','. $total_reg;
