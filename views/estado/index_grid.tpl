@@ -19,4 +19,5 @@
             <tr><td colspan="100%">Nenhum registro encontrado!</td></tr>
         {/foreach}          
     </tbody>
-</table>
+</table>    
+    {$paginador}

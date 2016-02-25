@@ -30,8 +30,12 @@
         {/foreach}          
     </tbody>
 </table>
+
 <div class="row">
     <div class="col-md-4">
         <h4>{if isset($error)}{$error}{/if}</h4>
     </div>  
 </div> 
+
+{$paginador}
+
