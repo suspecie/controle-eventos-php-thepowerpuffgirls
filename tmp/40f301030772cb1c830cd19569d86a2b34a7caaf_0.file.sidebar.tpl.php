@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 10:04:58
+/* Smarty version 3.1.29, created on 2016-02-25 11:31:22
   from "/var/www/html/controle-eventos-php-thepowerpuffgirls/views/comum/sidebar.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cefbfa32ad29_03057991',
+  'unifunc' => 'content_56cf103a13dff2_43844517',
   'file_dependency' => 
   array (
     '40f301030772cb1c830cd19569d86a2b34a7caaf' => 
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cefbfa32ad29_03057991 ($_smarty_tpl) {
+function content_56cf103a13dff2_43844517 ($_smarty_tpl) {
 ?>
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">

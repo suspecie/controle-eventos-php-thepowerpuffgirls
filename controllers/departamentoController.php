@@ -37,10 +37,10 @@ class departamento extends controller {
         //Busca os registros para o Grid
         $model = new model(); 
 
-        $qry_limitada = $model->readSQL("SELECT * FROM departamento LIMIT $inicio,$total_reg");
+        $qry_limitada = $model->readSQL("SELECT * FROM departamentos LIMIT $inicio,$total_reg");
         $this->smarty->assign('listdepartamento', $qry_limitada);
         // Total de Registros na tabela    
-        $qry_total = $model->readSQL("SELECT count(*)as total FROM departamento");
+        $qry_total = $model->readSQL("SELECT count(*)as total FROM departamentos");
         $total_registros = $qry_total[0]['total']; //pega o valor
         $html = $this->paginador($pc, $total_registros, 'departamento');
         return $html;
