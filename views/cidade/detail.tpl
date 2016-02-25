@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -26,7 +26,7 @@
                                 <tbody>
                                     <tr><td>Código</td>  <td>{$registro.codigo}</td></tr>
                                     <tr><td>Descrição</td>  <td>{$registro.descricao}</td></tr>   
-                                    <tr><td>Estado</td>  <td>{$registro.id_estado}</td></tr>  
+                                    <tr><td>Estado</td>  <td>{$registro.estado}</td></tr>  
                                 </tbody>
                             </table>                            
 

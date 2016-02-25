@@ -21,18 +21,10 @@
                     <div class="row">
 
                         <div class="col-lg-12">
-                            <h1>Nova Participação </h1>
-                            <form role="form" action="/participacao/save/" method="POST" enctype="multipart/form-data">
+                            <h1>Novo Produto-Evento </h1>
+                            <form role="form" action="/produtoevento/save" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="cliente">Cliente</label>
-                                    <select class="form-control" name = "cliente" id = "cliente">
-                                        <option value=""></option>
-                                        {foreach from=$listcliente item=linha}
-                                            <option value="{$linha.codigo}">{$linha.nome}</option>
-                                        {/foreach}
-                                    </select >
-                                    <br>
-                                    <label for="cliente">Evento</label>
+                                   <label for="cliente">Evento</label>
                                     <select class="form-control" name = "evento" id = "evento">
                                         <option value=""></option>
                                         {foreach from=$listevento item=linha}
@@ -40,9 +32,23 @@
                                         {/foreach}
                                     </select >
                                     <br>
-                                    <button type="submit" class="btn btn-default">Salvar</button>
+                                    <label for="cliente">Produto</label>
+                                    <select class="form-control" name = "produto" id = "produto">
+                                        <option value=""></option>
+                                        {foreach from=$listproduto item=linha}
+                                            <option value="{$linha.codigo}">{$linha.produto}</option>
+                                        {/foreach}
+                                    </select >
+                                    <br>
+                                    <label for="cliente">Quantidade</label>
+                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
+                                    <br>
                                 </div>                                                                
+                                <button type="submit" class="btn btn-default">Salvar</button>
+                            </form>
                         </div>
+
+
                     </div>
                 </div>
             </div>

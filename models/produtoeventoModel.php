@@ -4,28 +4,32 @@
  */
 
 
-class statusprodModel extends model {
+class produtoeventoModel extends model {
     
-    var $tabPadrao = 'status_produto';
+    var $tabPadrao = 'evento_produto';
     var $campo_chave = 'codigo';
 
     // An empty structure to create news Entitys 
     public function estrutura_vazia() {
         $dados = null;
         $dados[0]['codigo'] = NULL;
-        $dados[0]['status_prod'] = NULL;   
+        $dados[0]['id_evento'] = NULL;
+        $dados[0]['id_produto'] = NULL;
+        $dados[0]['qtd'] = NULL;        
         return $dados;
     }
 
     
     /** Retrieve the Entity */
-    public function getStatus($where = null) {
-        $select = array('*');
-        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    public function getProdutoEvento($where = null) {
+        $select = array(' ep.*', 'e.descricao as evento', 'prod.produto as produto', 'prod.qtd_total as qtdtotal');
+        $tables = "evento_produto ep left join evento e on (e.codigo = ep.id_evento)";
+        $tables .= "left join produtos prod on (prod.codigo = ep.id_produto)";
+        return $this->read($tables, $select, $where, null, null, null, null);
     }
 
     /** Save a new Entity  */
-    public function setStatus($array) {
+    public function setProdutoEvento($array) {
 
         $this->startTransaction();
 
@@ -39,7 +43,7 @@ class statusprodModel extends model {
     }
 
     /** Update the Entity */
-    public function updStatus($array) {
+    public function updProdutoEvento($array) {
         //Chave    
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         $this->startTransaction();
@@ -49,11 +53,9 @@ class statusprodModel extends model {
     }
 
      /** Remove the Entity */
-    public function delStatus($array) {
+    public function delProdutoEvento($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
-        //$array2['active'] = 0; // Muda status para zero excluido!
-        //var_dump (array2);
         $this->startTransaction();
         $this->transaction($this->delete($this->tabPadrao, $where));
         $this->commit();

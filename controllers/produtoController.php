@@ -22,6 +22,7 @@ class produto extends controller {
     }
 
     public function add() {
+                     
         //chama status
         $model_statusprod = new statusProdModel();
         $status_res = $model_statusprod->getStatus(''); //Full table Scan :( or :)         
@@ -42,6 +43,7 @@ class produto extends controller {
         $dados['produto'] = $_POST['name'];
         $dados['id_status'] = $_POST['status'];
         $dados['codigo_departamento'] = $_POST['departamento'];
+        $dados['qtd_total'] = $_POST['quantidade'];
         //$dados['created'] = date("Y-m-d H:i:s");
         //$dados['active'] = 1;
         $modelproduto->setProduto($dados);
@@ -57,6 +59,7 @@ class produto extends controller {
         $dados['produto'] = $_POST['name'];
         $dados['id_status'] = $_POST['status'];
         $dados['codigo_departamento'] = $_POST['departamento'];
+        $dados['qtd_total'] = $_POST['quantidade'];
         $modelproduto->updProduto($dados);
 
         header('Location: /produto');

@@ -20,33 +20,37 @@ class participacao extends controller {
         $cliente_res = $model_cliente->getCliente(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listcliente', $cliente_res);
-        
+
         //list all records
         $model_evento = new eventoModel();
         $evento_res = $model_evento->getEvento(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listevento', $evento_res);
-        
+
         $this->smarty->assign('title', 'Nova Participação');
         $this->smarty->display('participacao/new.tpl');
     }
 
     public function save() {
+
         $modelparticipacao = new participacaoModel();
         $dados['id_cliente'] = $_POST['cliente'];
         $dados['id_evento'] = $_POST['evento'];
-        $dados['data_hora'] = $_POST['datahora'];
-        $id_participacao = $modelparticipacao->setParticipacao($dados);
-        
-        $resparticipacao = $modelparticipacao->getParticipacao('p.codigo=' . $id_participacao);        
-        $this->smarty->assign('registro', $resparticipacao[0]);
-        $this->smarty->assign('id', $id_participacao);
-        $this->smarty->display('participacao/newmoredetails.tpl');
+        $dados['data_hora'] = date("Y-m-d H:i:s");
+
+        $exists = $this->estoque($dados['id_cliente'], $dados['id_evento']);
+        if (!$exists) {
+            $id_participacao = $modelparticipacao->setParticipacao($dados);
+            $resparticipacao = $modelparticipacao->getParticipacao('p.codigo=' . $id_participacao);
+            $this->smarty->assign('registro', $resparticipacao[0]);
+            $this->smarty->assign('id', $id_participacao);
+            $this->smarty->display('participacao/newmoredetails.tpl');
+        }
     }
 
     public function update() {
         $id = $this->getParam('id');
-   
+
         $modelparticipacao = new participacaoModel();
         $dados['codigo'] = $id;
         $dados['id_cliente'] = $_POST['cliente'];
@@ -62,64 +66,64 @@ class participacao extends controller {
         $modelparticipacao = new participacaoModel();
         $resparticipacao = $modelparticipacao->getParticipacao('p.codigo=' . $id);
         $this->smarty->assign('registro', $resparticipacao[0]);
-        
-          //list all records
+
+        //list all records
         $model_arquivo = new arquivoModel();
         $arquivo_res = $model_arquivo->getArquivo(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listarquivo', $arquivo_res);
-        
-        
+
+
         //list all records
         $model_foto = new fotoModel();
         $foto_res = $model_foto->getFoto(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listfoto', $foto_res);
-        
-        
-        
+
+
+
         $this->smarty->assign('title', 'Detalhes dos Participações');
         //call the smarty
         $this->smarty->display('participacao/detail.tpl');
     }
 
     public function edit() {
-       
+
         //die();
         $id = $this->getParam('id');
-        
+
         //list all records
         $modelparticipacao = new participacaoModel();
         $resparticipacao = $modelparticipacao->getParticipacao('p.codigo=' . $id);
         $this->smarty->assign('registro', $resparticipacao[0]);
-        
+
         //list all records
         $model_cliente = new clienteModel();
         $cliente_res = $model_cliente->getCliente(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listcliente', $cliente_res);
-        
+
         //list all records
         $model_evento = new eventoModel();
         $evento_res = $model_evento->getEvento(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listevento', $evento_res);
-        
+
         //list all records
         $model_arquivo = new arquivoModel();
         $arquivo_res = $model_arquivo->getArquivo(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listarquivo', $arquivo_res);
-        
-        
+
+
         //list all records
         $model_foto = new fotoModel();
         $foto_res = $model_foto->getFoto(); //Full table Scan :( or :)   
         //send the records to template sytem
         $this->smarty->assign('listfoto', $foto_res);
-        
-        
-        
+
+
+
         $this->smarty->assign('title', 'Detalhes dos Participações');
         //call the smarty
         $this->smarty->display('participacao/edit.tpl');
@@ -130,49 +134,61 @@ class participacao extends controller {
         $id = $this->getParam('id');
         $modelparticipacao = new participacaoModel();
         $dados['codigo'] = $id;
-        $modelparticipacao->delParticipacao($dados);
         
-               
-        $modelarquivo = new arquivoModel();
-        $target_file_arquivo = $modelarquivo->getArquivo('id_evento_cliente='.$id); //Full table Scan :( or :)   
-        $dados['id_evento_cliente'] = $id;
-        
-         if (file_exists($target_file_arquivo[0]['caminho_arquivo'])) {
+        //update qtd_total do produto
+        $participacao_res = $modelparticipacao->getParticipacao('p.codigo='.$id);        
+        $resultado = $modelparticipacao->getQuantidade('p.codigo='.$id);
+                
+        foreach ($resultado as $value) {
 
-            echo( unlink($target_file_arquivo[0]['caminho_arquivo'])); 
-         }
+                $data['qtd_total'] = $value['qtdtotal'] + $value['qtd'];
+                $data['codigo'] = $value['id_produto'];
+                $model_produto = new produtoModel();
+                $resultado = $model_produto->updProduto($data);
+        }
         
+        //apaga a participacao
+        $modelparticipacao->delParticipacao($dados);
+
+        
+        //apaga os arquivos
+        $modelarquivo = new arquivoModel();
+        $target_file_arquivo = $modelarquivo->getArquivo('id_evento_cliente=' . $id); //Full table Scan :( or :)   
+        $dados['id_evento_cliente'] = $id;
+        if (file_exists($target_file_arquivo[0]['caminho_arquivo'])) {
+
+            echo( unlink($target_file_arquivo[0]['caminho_arquivo']));
+        }
         $modelarquivo->delArquivo($dados);
+
         
+        
+        //apaga as fotos
         $modelfoto = new fotoModel();
         $dados['id_evento_cliente'] = $id;
-        $target_foto = $modelfoto->getFoto('id_evento_cliente='.$id); //Full table Scan :( or :)   
-        
-          if (file_exists($target_foto[0]['caminho_foto'])) {
-
-            echo( unlink($target_foto[0]['caminho_foto'])); 
-         }
-    
+        $target_foto = $modelfoto->getFoto('id_evento_cliente=' . $id); //Full table Scan :( or :)   
+        if (file_exists($target_foto[0]['caminho_foto'])) {
+            echo( unlink($target_foto[0]['caminho_foto']));
+        }
         $modelfoto->delFoto($dados);
-        
-        
+
 
         header('Location: /participacao');
     }
-    
-    public function uploadFile() {   
-           
+
+    public function uploadFile() {
+
         if (($_FILES["fileToUpload"]['name']['size'] == '')) {
             header('Location: /participacao');
             return;
         }
-        
+
         $target_dir = "files/arquivo/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
-        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);       
-        
-        
+        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+
         // Check if image file is a actual image or fake image
         if (isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -215,8 +231,7 @@ class participacao extends controller {
             }
         }
     }
-    
-    
+
     public function uploadfoto() {
         $id = $_POST['id_evento_cliente'];
         $filepath = "files/fotos/" . date("YmdHis") . ".png";
@@ -228,14 +243,49 @@ class participacao extends controller {
         $model = new model();
         $model->insert("foto", $data);
     }
-    
-    public function base64_to_jpeg($base64_string, $output_file){
+
+    public function base64_to_jpeg($base64_string, $output_file) {
         $ifp = fopen($output_file, "wb");
         fwrite($ifp, base64_decode($base64_string));
         fclose($ifps);
         return ($output_file);
-    }   
-    
+    }
+
+    public function estoque($id_cliente, $id_evento) {
+
+
+        $modelparticipacao = new participacaoModel();
+        $verificaseexiste = $modelparticipacao->getParticipacao("id_evento = $id_evento AND id_cliente = $id_cliente");
+
+
+        if ($verificaseexiste) {
+            $participacoes_res = $modelparticipacao->getParticipacao(''); //Full table Scan :( or :)   
+            //send the records to template sytem
+            $this->smarty->assign('listparticipacao', $participacoes_res);
+            $this->smarty->assign('error', 'O cliente já participa deste evento!');
+            $this->smarty->display('participacao/index.tpl');
+
+            return true;
+        } else {
+
+
+            //list all records
+            $model_produtoevento = new produtoeventoModel();
+            $produtoevento_res = $model_produtoevento->getProdutoEvento('ep.id_evento=' . $id_evento); //Full table Scan :( or :)   
+
+
+            foreach ($produtoevento_res as $value) {
+
+                $data['qtd_total'] = $value['qtdtotal'] - $value['qtd'];
+                $data['codigo'] = $value['id_produto'];
+                $model_produto = new produtoModel();
+                $resultado = $model_produto->updProduto($data);
+            }
+
+            return false;
+        }
+    }
+
 }
 
 ?>

@@ -21,28 +21,24 @@
                     <div class="row">
 
                         <div class="col-lg-12">
-                            <h1>Nova Participação </h1>
-                            <form role="form" action="/participacao/save/" method="POST" enctype="multipart/form-data">
+                            <h1>Nova Emissão </h1>
+                            <form role="form" action="/cracha/buscar" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
+
                                     <label for="cliente">Cliente</label>
-                                    <select class="form-control" name = "cliente" id = "cliente">
+                                    <select class="form-control" name = "cliente" id = "cliente" required>
                                         <option value=""></option>
                                         {foreach from=$listcliente item=linha}
                                             <option value="{$linha.codigo}">{$linha.nome}</option>
                                         {/foreach}
                                     </select >
                                     <br>
-                                    <label for="cliente">Evento</label>
-                                    <select class="form-control" name = "evento" id = "evento">
-                                        <option value=""></option>
-                                        {foreach from=$listevento item=linha}
-                                            <option value="{$linha.codigo}">{$linha.descricao}</option>
-                                        {/foreach}
-                                    </select >
-                                    <br>
-                                    <button type="submit" class="btn btn-default">Salvar</button>
                                 </div>                                                                
+                                <button type="submit" class="btn btn-default">Emitir Cracha</button>
+                            </form>
                         </div>
+
+
                     </div>
                 </div>
             </div>

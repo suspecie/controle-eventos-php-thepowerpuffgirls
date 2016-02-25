@@ -21,12 +21,17 @@
                 <td>{$linha.codigo_nis}</td>
                 <td>{$linha.cpf}</td>                
                 <td>{$linha.rg}</td>
-                <td><a href="/cliente/detalhes/id/{$linha.codigo}">Details</a> | 
-                    <a href="/cliente/edit/id/{$linha.codigo}">Edit</a> | 
-                    <a href="/cliente/delete/id/{$linha.codigo}" class="del">Delete</a></td>
+                <td><a href="/cliente/detalhes/id/{$linha.codigo}">Detalhes</a> | 
+                    <a href="/cliente/edit/id/{$linha.codigo}">Editar</a> | 
+                    <a href="/cliente/delete/id/{$linha.codigo}" class="del">Excluir</a></td>
             </tr>
         {foreachelse}
             <tr><td colspan="100%">Sem Registros</td></tr>
         {/foreach}          
     </tbody>
 </table>
+<div class="row">
+    <div class="col-md-4">
+        <h4>{if isset($error)}{$error}{/if}</h4>
+    </div>  
+</div> 

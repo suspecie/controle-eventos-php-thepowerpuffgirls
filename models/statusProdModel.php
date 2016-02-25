@@ -4,28 +4,28 @@
  */
 
 
-class departamentoModel extends model {
+class statusProdModel extends model {
     
-    var $tabPadrao = 'departamentos';
+    var $tabPadrao = 'status_produto';
     var $campo_chave = 'codigo';
 
     // An empty structure to create news Entitys 
     public function estrutura_vazia() {
         $dados = null;
         $dados[0]['codigo'] = NULL;
-        $dados[0]['departamento'] = NULL;       
+        $dados[0]['status_prod'] = NULL;   
         return $dados;
     }
 
     
     /** Retrieve the Entity */
-    public function getDepartamento($where = null) {
+    public function getStatus($where = null) {
         $select = array('*');
         return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
     }
 
     /** Save a new Entity  */
-    public function setDepartamento($array) {
+    public function setStatus($array) {
 
         $this->startTransaction();
 
@@ -39,7 +39,7 @@ class departamentoModel extends model {
     }
 
     /** Update the Entity */
-    public function updDepartamento($array) {
+    public function updStatus($array) {
         //Chave    
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         $this->startTransaction();
@@ -49,7 +49,7 @@ class departamentoModel extends model {
     }
 
      /** Remove the Entity */
-    public function delDepartamento($array) {
+    public function delStatus($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         //$array2['active'] = 0; // Muda status para zero excluido!

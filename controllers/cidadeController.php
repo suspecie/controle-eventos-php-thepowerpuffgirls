@@ -58,7 +58,7 @@ class cidade extends controller {
     public function detalhes() {
         $id = $this->getParam('id');
         $modelcidade = new cidadeModel();
-        $rescidade = $modelcidade->getCidade('codigo=' . $id);
+        $rescidade = $modelcidade->getCidade('c.codigo=' . $id);
         $this->smarty->assign('registro', $rescidade[0]);
         $this->smarty->assign('title', 'Detalhes Cidade');
         //call the smarty
@@ -70,7 +70,7 @@ class cidade extends controller {
         //die();
         $id = $this->getParam('id');
         $modelcidade = new cidadeModel();
-        $rescidade = $modelcidade->getCidade('codigo=' . $id);
+        $rescidade = $modelcidade->getCidade('c.codigo=' . $id);
         $this->smarty->assign('registro', $rescidade[0]);
         
              //chama estado

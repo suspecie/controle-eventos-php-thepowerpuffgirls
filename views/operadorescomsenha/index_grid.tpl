@@ -13,9 +13,9 @@
                 <td>{$linha.codigo}</td>
                 <td>{$linha.nome}</td>                             
                 <td>{$linha.acessodescricao}</td> 
-                 <td><a href="/operadorescomsenha/detalhes/id/{$linha.codigo}">Details</a> | 
-                     <a href="/operadorescomsenha/edit/id/{$linha.codigo}">Edit</a> | 
-                     <a href="/operadorescomsenha/delete/id/{$linha.codigo}" class="del">Delete</a></td>
+                 <td><a href="/operadorescomsenha/detalhes/id/{$linha.codigo}">Detalhes</a> | 
+                     <a href="/operadorescomsenha/edit/id/{$linha.codigo}">Editar</a> | 
+                     <a href="/operadorescomsenha/delete/id/{$linha.codigo}" class="del">Excluir</a></td>
             </tr>
         {foreachelse}
             <tr><td colspan="100%">Sem Registros</td></tr>

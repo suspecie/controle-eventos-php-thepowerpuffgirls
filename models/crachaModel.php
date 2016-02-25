@@ -4,28 +4,38 @@
  */
 
 
-class departamentoModel extends model {
+class crachaModel extends model {
     
-    var $tabPadrao = 'departamentos';
+    var $tabPadrao = 'cracha';
     var $campo_chave = 'codigo';
 
     // An empty structure to create news Entitys 
     public function estrutura_vazia() {
         $dados = null;
         $dados[0]['codigo'] = NULL;
-        $dados[0]['departamento'] = NULL;       
+        $dados[0]['id_cliente'] = NULL;
+        $dados[0]['status_cracha'] = NULL;
         return $dados;
     }
 
     
     /** Retrieve the Entity */
-    public function getDepartamento($where = null) {
-        $select = array('*');
-        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    public function getCracha($where = null) {
+        $select = array('cr.*','cl.codigo as codcliente','cl.nome as nomecliente','e.descricao as evento', 'f.caminho_foto as foto');
+        $tables = "cracha cr";
+        $tables .= " left join cliente cl on(cl.codigo = cr.id_cliente)";
+        $tables .= " left join participacao p on(p.id_cliente = cr.id_cliente)";
+        $tables .= " left join evento e on(e.codigo = p.id_evento)";
+        $tables .= " left join foto f on(f.id_evento_cliente = p.codigo)";
+        
+        $return = $this->read($tables, $select, $where, null, null, null);
+        //var_dump($return); die();
+        
+        return $return;
     }
 
     /** Save a new Entity  */
-    public function setDepartamento($array) {
+    public function setCracha($array) {
 
         $this->startTransaction();
 
@@ -39,7 +49,7 @@ class departamentoModel extends model {
     }
 
     /** Update the Entity */
-    public function updDepartamento($array) {
+    public function updCracha($array) {
         //Chave    
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
         $this->startTransaction();
@@ -49,11 +59,9 @@ class departamentoModel extends model {
     }
 
      /** Remove the Entity */
-    public function delDepartamento($array) {
+    public function delCracha($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
-        //$array2['active'] = 0; // Muda status para zero excluido!
-        //var_dump (array2);
         $this->startTransaction();
         $this->transaction($this->delete($this->tabPadrao, $where));
         $this->commit();

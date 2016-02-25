@@ -13,7 +13,8 @@ CREATE TABLE cidade (
   `descricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 -- STATUS_EVENTO
@@ -24,7 +25,8 @@ CREATE TABLE status_evento (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- EVENTO
 
@@ -40,7 +42,7 @@ CREATE TABLE evento (
   KEY `fk_evento_statusevento_idx` (`id_status`),
   CONSTRAINT `fk_evento_cidade` FOREIGN KEY (`id_cidade`) REFERENCES `cidade` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_evento_statusevento` FOREIGN KEY (`id_status`) REFERENCES `status_evento` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 -- CLIENTE
@@ -57,7 +59,8 @@ CREATE TABLE cliente (
   `created` datetime DEFAULT NULL,
   `active` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 -- TIPODEACESSO
@@ -68,6 +71,7 @@ CREATE TABLE tipodeacesso (
   `acessodescricao` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 INSERT INTO tipodeacesso(`codigo`,`acessodescricao`) VALUES(1,'ADMIN');
 INSERT INTO tipodeacesso(`codigo`,`acessodescricao`) VALUES(2,'OPERADOR');
@@ -84,7 +88,8 @@ CREATE TABLE operadorescomsenha (
   PRIMARY KEY (`codigo`),
   KEY `fk_operadorescomsenha_tipoacesso_idx` (`tipo_acesso`),
   CONSTRAINT `fk_operadorescomsenha_tipoacesso` FOREIGN KEY (`tipo_acesso`) REFERENCES `tipodeacesso` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 INSERT INTO operadorescomsenha(`codigo`,`nome`,`senha`,`tipo_acesso`) VALUES(1,'admin',123,1);
 
@@ -92,11 +97,12 @@ INSERT INTO operadorescomsenha(`codigo`,`nome`,`senha`,`tipo_acesso`) VALUES(1,'
 -- DEPARTAMENTO
 DROP TABLE IF EXISTS departamento;
 
-CREATE TABLE departamento (
+CREATE TABLE departamentos (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `departamento` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Tabela de Departamentos do controle de Eventos';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Tabela de Departamentos do controle de Eventos';
+
 
 -- ESTADO
 DROP TABLE IF EXISTS estado;
@@ -105,16 +111,18 @@ CREATE TABLE estado (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Tabela de Estados';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Tabela de Estados';
+
 
 -- STATUS DOS PRODUTOS
 DROP TABLE IF EXISTS status_produto;
 
 CREATE TABLE status_produto (
-  `codigo` int(11) NOT NULL,
-  `status_prod` varchar(45) DEFAULT NULL,
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `status_prod` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- PRODUTOS
 DROP TABLE IF EXISTS produtos;
@@ -124,12 +132,13 @@ CREATE TABLE produtos (
   `produto` varchar(45) DEFAULT NULL,
   `id_status` int(11) DEFAULT NULL,
   `codigo_departamento` int(11) DEFAULT NULL,
+  `qtd_total` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo`),
   KEY `prod_dep_idx` (`codigo_departamento`),
   KEY `prod_status_idx` (`id_status`),
-  CONSTRAINT `prod_dep` FOREIGN KEY (`codigo_departamento`) REFERENCES `departamento` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `prod_dep` FOREIGN KEY (`codigo_departamento`) REFERENCES `departamentos` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `prod_status` FOREIGN KEY (`id_status`) REFERENCES `status_produto` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='Tabela de Produtos dos Eventos';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Tabela de Produtos dos Eventos';
 
 
 -- ARQUIVO
@@ -139,6 +148,7 @@ CREATE TABLE arquivo (
   `id_evento_cliente` int(11) DEFAULT NULL,
   `caminho_arquivo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 -- PARTICIPACAO
@@ -154,7 +164,8 @@ CREATE TABLE participacao (
   KEY `fk_participacao_evento_idx` (`id_evento`),
   CONSTRAINT `fk_participacao_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_participacao_evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 -- FOTO
@@ -164,6 +175,31 @@ CREATE TABLE foto (
   `id_evento_cliente` int(11) DEFAULT NULL,
   `caminho_foto` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+-- EVENTO PRODUTO
+DROP TABLE IF EXISTS evento_produto;
+
+CREATE TABLE evento_produto (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_evento` int(11) DEFAULT NULL,
+  `id_produto` int(11) DEFAULT NULL,
+  `qtd` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- CRACHA
+CREATE TABLE crachaS (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) DEFAULT NULL,
+  `status_cracha` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `fk_cracha_cliente_idx` (`id_cliente`),
+  KEY `fk_cracha_statuscracha_idx` (`status_cracha`),
+  CONSTRAINT `fk_cracha_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 -- COLORS
