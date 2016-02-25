@@ -21,8 +21,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Departamento</h1>
-                            <p>Cadastro de Departamentos.
-                                </p>                            
+                            <p>Este cadastro irá inserir o departamento do produto do evento.</p>                            
                             <a href="/departamento/add" class="btn btn-default" id="btn_novo">Novo Departamento</a>
                             <br>
                             {include file="departamento/index_grid.tpl"}

@@ -48,7 +48,7 @@
                                     </select>
                                     <br>
                                     <label for="datahora">Data/Hora</label>
-                                    <input type="input" class="form-control" id="datahora" name="datahora" value="{$registro.data_hora}">
+                                    <input type="input" class="form-control" id="datahora" name="datahora" value="{$registro.data_hora | date_format: '%d/%m/%Y %H:%M:$S'}">
                                     <br>
                                     <label for="datahora">Arquivo (não é possível alterar o arquivo)</label>
                                     <br>

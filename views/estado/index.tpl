@@ -21,8 +21,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Estado</h1>
-                            <p>Cadastro de Estados.
-                                </p>                            
+                            <p>Este cadastro irá inserir o estado onde irão acontecer os eventos</p>                            
                             <a href="/estado/add" class="btn btn-default" id="btn_novo">Novo Estado</a>
                             <br>
                             {include file="estado/index_grid.tpl"}

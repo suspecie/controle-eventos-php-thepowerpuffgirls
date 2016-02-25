@@ -6,7 +6,7 @@
 
 class departamentoModel extends model {
     
-    var $tabPadrao = 'departamento';
+    var $tabPadrao = 'departamentos';
     var $campo_chave = 'codigo';
 
     // An empty structure to create news Entitys 

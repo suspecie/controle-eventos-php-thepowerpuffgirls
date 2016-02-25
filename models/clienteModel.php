@@ -54,10 +54,7 @@ class clienteModel extends model {
     public function delCliente($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
-        $this->startTransaction();
-        $this->transaction($this->delete($this->tabPadrao, $where));
-        $this->commit();
-        return true;
+        return $this->delete($this->tabPadrao, $where);
     }
 
 }

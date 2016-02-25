@@ -21,13 +21,13 @@
                     <div class="row">
 
                         <div class="col-lg-12">
-                             <h1>Detalhes Participação</h1>
+                             <h1>Detalhes do Evento</h1>
                             <table class="table table-striped">                        
                                 <tbody>
                                     <tr><td>Código</td>  <td>{$registro.codigo}</td></tr>
                                     <tr><td>Ciente</td>  <td>{$registro.descricao}</td></tr>
                                     <tr><td>Evento</td>  <td>{$registro.cidade}</td></tr>
-                                    <tr><td>Data/Hora</td>  <td>{$registro.data_hora}</td></tr>                                
+                                    <tr><td>Status</td>  <td>{$registro.statusevento}</td></tr>                                
                                 </tbody>
                             </table>                            
 
