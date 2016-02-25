@@ -21,8 +21,8 @@ class cidadeModel extends model {
     
     /** Retrieve the Entity */
     public function getCidade($where = null) {
-        $select = array('*');
-        $tables = "cidade c LEFT JOIN estado e on c.id_estado = e.codigo";
+        $select = array('c.*','e.estado as estado');
+        $tables = "cidade c left join estado e on (c.id_estado = e.codigo)";
         $return = $this->read($tables, $select, $where, null, null, null);
         //var_dump($return); die();
         

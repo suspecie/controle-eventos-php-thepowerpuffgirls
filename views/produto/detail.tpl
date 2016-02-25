@@ -28,6 +28,7 @@
                                     <tr><td>Produto</td>  <td>{$registro.produto}</td></tr>
                                     <tr><td>Status</td>  <td>{$registro.status_prod}</td></tr>
                                     <tr><td>Departamento</td>  <td>{$registro.departamento}</td></tr>
+                                    <tr><td>Quantidade</td>  <td>{$registro.qtd_total}</td></tr>
                                 </tbody>
                             </table>                            
 

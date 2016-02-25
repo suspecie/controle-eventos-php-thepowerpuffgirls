@@ -40,6 +40,9 @@
                                         <option value={$lista.codigo}>{$lista.departamento}</option>
                                         {/foreach}
                                     </select>
+                                    <br>
+                                    <label for="name">Quantidade</label>
+                                    <input type="input" class="form-control" id="quantidade" name="quantidade" required>
                                 </div>                                                                
                                 <button type="submit" class="btn btn-default">Salvar</button>
                             </form>

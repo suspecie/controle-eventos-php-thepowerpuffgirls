@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Operadores com Senha</h1>
-                            <p>This example access the database. use the script chayotedb.sql and configure the config.php to use.
+                            <p>Este cadastro permite cadastrar os operadores que terão acesso ao sistema.
                                 </p>                            
                             <a href="/operadorescomsenha/add" class="btn btn-default" id="btn_novo">Novo Operador</a>
                             <br>

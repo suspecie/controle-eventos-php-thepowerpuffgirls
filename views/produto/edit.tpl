@@ -36,6 +36,7 @@
                                             {/if}
                                         {/foreach}
                                     </select>
+                                    <br>
                                     <label for="depto">Departamento</label>
                                     <select class="form-control" id="departamento" name="departamento">
                                         <option value="{$registro.codigo_departamento}">{$registro.departamento}</option>
@@ -45,6 +46,9 @@
                                             {/if}
                                         {/foreach}
                                     </select>
+                                    <br>
+                                    <label for="depto">Quantidade</label>
+                                    <input type="text" class="form-control" id="quantidade" name="quantidade" value="{$registro.qtd_total}">
                                 </div>
                                 <button type="submit" class="btn btn-default">Alterar</button>
                             </form>

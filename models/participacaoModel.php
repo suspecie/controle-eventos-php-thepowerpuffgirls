@@ -64,6 +64,17 @@ class participacaoModel extends model {
         return true;
     }
     
+    
+    /** Retrieve the Entity */
+    public function getQuantidade($where = null) {
+        $select = array('p.*', 'ep.qtd as qtd', 'pr.qtd_total as qtdtotal', 'pr.codigo as id_produto');
+        $tables = "participacao p";
+        $tables .= " left join evento e on(e.codigo = p.id_evento)";
+        $tables .= " left join evento_produto ep on(ep.id_evento = e.codigo)";
+        $tables .= " left join produtos pr on(pr.codigo = ep.id_produto)";
+        return $this->read($tables, $select, $where, null, null, null, null);
+    }
+    
  
 }
 

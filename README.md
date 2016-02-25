@@ -14,16 +14,4 @@ login: admin
 senha: 123
 
 
-Tarefas não realizadas:
-
-7. cadastrar a participacao do cliente em um determinado evento (id,id_cliente,id_evento,data_hora, produtos, fotos, e arquivos adicionados) e selecionar produtos bonificados (controlar estoque unico), permitir tirar foto usando a webcam (html5)
-
-8. cancelar participacao e voltar produto ao estoque unico
-
-12. emitir relatório de eventos e clientes
-
-14. dar baixa nos produtos ao cadastrar participacao
-
-17. imprimir cracha do participante
-
-18. gravar o status de crachá impresso para controlar as pessoas que realmente receberam o cracha.
+4) Utilizar o firefox, pois somente ele faz a webcam funcionar.
