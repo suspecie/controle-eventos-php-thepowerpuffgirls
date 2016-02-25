@@ -9,18 +9,41 @@ class estado extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
-        //list all records
-        $model_estados = new estadoModel();
-        $estados_res = $model_estados->getEstado(''); //Full table Scan :( or :)         
+        //list all records 
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());     
         //send the records to template sytem
-        $this->smarty->assign('listestado', $estados_res);
         $this->smarty->assign('title', 'Estado');
         //call the smarty
         $this->smarty->display('estado/index.tpl');
     }
+public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
+    public function mostraGrid() {
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        //Busca os registros para o Grid
+        $model = new model(); 
 
+        $qry_limitada = $model->readSQL("SELECT * FROM estado LIMIT $inicio,$total_reg");
+        $this->smarty->assign('listestado', $qry_limitada);
+        // Total de Registros na tabela    
+        $qry_total = $model->readSQL("SELECT count(*)as total FROM estado");
+        $total_registros = $qry_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'estado');
+        return $html;
+    }
     public function add() {
         $this->smarty->assign('title', 'Novo Estado');
         $this->smarty->display('estado/new.tpl');        

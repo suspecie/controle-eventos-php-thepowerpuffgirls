@@ -28,3 +28,5 @@
         <h4>{if isset($error)}{$error}{/if}</h4>
     </div>  
 </div> 
+
+{$paginador}

@@ -9,17 +9,40 @@ class cidade extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_cidades = new cidadeModel();
-        $cidades_res = $model_cidades->getCidade(); 
-        //var_dump($cidades_res);die();
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());      
         //send the records to template sytem
-        $this->smarty->assign('listcidade', $cidades_res);
         $this->smarty->assign('title', 'Cidade');
         //call the smarty
         $this->smarty->display('cidade/index.tpl');
+    }
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
+    public function mostraGrid() {
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        //Busca os registros para o Grid
+        $model = new model(); 
+
+        $qry_limitada = $model->readSQL("SELECT c.*,e.estado FROM cidade c LEFT JOIN estado e ON (e.codigo = c.id_estado) LIMIT $inicio,$total_reg");
+        $this->smarty->assign('listcidade', $qry_limitada);
+        // Total de Registros na tabela    
+        $qry_total = $model->readSQL("SELECT count(*)as total FROM cidade");
+        $total_registros = $qry_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'cidade');
+        return $html;
     }
 
     public function add() {
