@@ -191,7 +191,7 @@ CREATE TABLE evento_produto (
 
 
 -- CRACHA
-CREATE TABLE crachaS (
+CREATE TABLE cracha (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) DEFAULT NULL,
   `status_cracha` int(11) DEFAULT NULL,
