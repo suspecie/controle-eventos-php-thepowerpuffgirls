@@ -54,12 +54,22 @@ class clienteModel extends model {
     public function delCliente($array) {
         //Key 
         $where = $this->campo_chave . " = " . $array[$this->campo_chave];
-        $this->startTransaction();
-        $this->transaction($this->delete($this->tabPadrao, $where));
-        $this->commit();
-        return true;
+        return $this->delete($this->tabPadrao, $where);
     }
 
+    /** Retrieve the Entity */
+    public function getCountCliente($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getClienteLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('*');
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($this->tabPadrao, $select, $where, null, $limit, null, null);
+    }
 }
 
 ?>

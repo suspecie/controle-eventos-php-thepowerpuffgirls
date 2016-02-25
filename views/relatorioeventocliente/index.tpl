@@ -20,9 +20,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                      <h1>Relatorio de Eventos</h1>
-                            <p>Eventos Cadastrados - (Participantes)</p>          
-                                </p>                            
+                      <h1>Relatorio de Eventos</h1>  
+                                                
                             <br>
                             {include file="relatorioeventocliente/index_grid.tpl"}
                         </div>

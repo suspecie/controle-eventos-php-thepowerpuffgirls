@@ -6,7 +6,7 @@
 
 class departamentoModel extends model {
     
-    var $tabPadrao = 'departamento';
+    var $tabPadrao = 'departamentos';
     var $campo_chave = 'codigo';
 
     // An empty structure to create news Entitys 
@@ -59,6 +59,23 @@ class departamentoModel extends model {
         $this->commit();
         return true;
     }
+    
+     /** Retrieve the Entity */
+    public function getCountDepartamento($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getDepartamentoLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('*');
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($this->tabPadrao, $select, $where, null, $limit, null, null);
+    }
+    
+    
+    
 
 }
 

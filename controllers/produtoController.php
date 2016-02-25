@@ -9,19 +9,19 @@ class produto extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_produtos = new produtoModel();
-        $produtos_res = $model_produtos->getProduto(''); //Full table Scan :( or :)         
-        //send the records to template sytem
-        $this->smarty->assign('listproduto', $produtos_res);
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
+
         $this->smarty->assign('title', 'Produto');
         //call the smarty
         $this->smarty->display('produto/index.tpl');
     }
 
     public function add() {
+                     
         //chama status
         $model_statusprod = new statusProdModel();
         $status_res = $model_statusprod->getStatus(''); //Full table Scan :( or :)         
@@ -42,6 +42,7 @@ class produto extends controller {
         $dados['produto'] = $_POST['name'];
         $dados['id_status'] = $_POST['status'];
         $dados['codigo_departamento'] = $_POST['departamento'];
+        $dados['qtd_total'] = $_POST['quantidade'];
         //$dados['created'] = date("Y-m-d H:i:s");
         //$dados['active'] = 1;
         $modelproduto->setProduto($dados);
@@ -57,6 +58,7 @@ class produto extends controller {
         $dados['produto'] = $_POST['name'];
         $dados['id_status'] = $_POST['status'];
         $dados['codigo_departamento'] = $_POST['departamento'];
+        $dados['qtd_total'] = $_POST['quantidade'];
         $modelproduto->updProduto($dados);
 
         header('Location: /produto');
@@ -108,6 +110,38 @@ class produto extends controller {
 
         header('Location: /produto');
     }
+    
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+         //list all records
+        $model_produtos = new produtoModel();
+        $produtos_res = $model_produtos->getProdutoLimit(null,$inicio,$total_reg); //Full table Scan :( or :)         
+        //send the records to template sytem
+        $this->smarty->assign('listproduto', $produtos_res);
+        
+        
+        $query_total = $model_produtos->getCountProduto();
+        
+        $total_registros = $query_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'produto');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
 
 }
 

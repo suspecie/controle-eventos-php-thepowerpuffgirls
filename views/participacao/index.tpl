@@ -21,8 +21,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Participação</h1>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>                            
-                            <a href="/participacao/add" class="btn btn-default" id="btn_novo">Novo</a>
+                            <p>Este cadastro irá inserir a participação do cliente no evento.</p>                            
+                            <a href="/participacao/add" class="btn btn-default" id="btn_novo">Nova Participação</a>
                             <br>
                             {include file="participacao/index_grid.tpl"}
                         </div>

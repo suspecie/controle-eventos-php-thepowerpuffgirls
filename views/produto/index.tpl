@@ -21,8 +21,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Produto</h1>
-                            <p>Cadastro de Produtos.
-                                </p>                            
+                            <p>Este cadastro irá inserir o produto que o evento poderá ter.</p>                            
                             <a href="/produto/add" class="btn btn-default" id="btn_novo">Novo Produto</a>
                             <br>
                             {include file="produto/index_grid.tpl"}

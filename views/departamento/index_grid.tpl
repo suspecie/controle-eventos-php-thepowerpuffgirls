@@ -13,10 +13,11 @@
                 <td>{$linha.departamento}</td>
                  <td><a href="/departamento/detalhes/id/{$linha.codigo}">Detalhes</a> | 
                      <a href="/departamento/edit/id/{$linha.codigo}">Editar</a> | 
-                     <a href="/departamento/delete/id/{$linha.codigo}" class="del">Deletar</a></td>
+                     <a href="/departamento/delete/id/{$linha.codigo}" class="del">Excluir</a></td>
             </tr>
         {foreachelse}
             <tr><td colspan="100%">Nenhum registro encontrado!</td></tr>
         {/foreach}          
     </tbody>
 </table>
+{$paginador}

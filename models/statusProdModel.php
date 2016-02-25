@@ -4,7 +4,7 @@
  */
 
 
-class statusprodModel extends model {
+class statusProdModel extends model {
     
     var $tabPadrao = 'status_produto';
     var $campo_chave = 'codigo';
@@ -58,6 +58,20 @@ class statusprodModel extends model {
         $this->transaction($this->delete($this->tabPadrao, $where));
         $this->commit();
         return true;
+    }
+    
+    /** Retrieve the Entity */
+    public function getCountStatus($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getStatusLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('*');
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($this->tabPadrao, $select, $where, null, $limit, null, null);
     }
 
 }

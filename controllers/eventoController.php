@@ -9,13 +9,13 @@ class evento extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1)  {
+        
+          //list all records
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
 
-        //list all records
-        $model_eventos = new eventoModel();
-        $eventos_res = $model_eventos->getEvento(''); //Full table Scan :( or :)   
-        //send the records to template sytem
-        $this->smarty->assign('listevento', $eventos_res);
+       
         $this->smarty->assign('title', 'Eventos');
         //call the smarty
         $this->smarty->display('evento/index.tpl');
@@ -104,6 +104,37 @@ class evento extends controller {
         $modelevento->delEvento($dados);
 
         header('Location: /evento');
+    }
+    
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+         //list all records
+        $model_eventos = new eventoModel();
+        $eventos_res = $model_eventos->getEventoLimit(null,$inicio,$total_reg); //Full table Scan :( or :)   
+        //send the records to template sytem
+        $this->smarty->assign('listevento', $eventos_res);
+       
+         
+        $query_total = $model_eventos->getCountEvento();
+        
+        $total_registros = $query_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'evento');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
     }
 
     

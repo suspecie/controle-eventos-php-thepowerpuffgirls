@@ -64,6 +64,35 @@ class participacaoModel extends model {
         return true;
     }
     
+    
+    /** Retrieve the Entity */
+    public function getQuantidade($where = null) {
+        $select = array('p.*', 'ep.qtd as qtd', 'pr.qtd_total as qtdtotal', 'pr.codigo as id_produto');
+        $tables = "participacao p";
+        $tables .= " left join evento e on(e.codigo = p.id_evento)";
+        $tables .= " left join evento_produto ep on(ep.id_evento = e.codigo)";
+        $tables .= " left join produtos pr on(pr.codigo = ep.id_produto)";
+        return $this->read($tables, $select, $where, null, null, null, null);
+    }
+    
+     /** Retrieve the Entity */
+    public function getCountParticipacao($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getParticipacaoLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('p.*', 'c.nome as cliente', 'e.descricao as evento', 'a.caminho_arquivo as caminho_arquivo', 'f.caminho_foto as caminho_foto');
+        $tables = "participacao p left join cliente c on (c.codigo  = p.id_cliente)";
+        $tables .= " left join evento e on (e.codigo  = p.id_evento)";
+        $tables .= " left join arquivo a on (a.id_evento_cliente  = p.codigo)";
+        $tables .= " left join foto f on (f.id_evento_cliente  = p.codigo)";
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables, $select, $where, null, $limit, null, null);
+    }
+    
  
 }
 

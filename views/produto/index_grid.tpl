@@ -4,7 +4,8 @@
             <th>ID</th>
             <th>Produto</th>
             <th>Status</th>
-            <th>Codigo Departamento</th>
+            <th>Departamento</th>
+            <th>Quantidade</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -15,6 +16,7 @@
                 <td>{$linha.produto}</td>
                 <td>{$linha.status_prod}</td>
                 <td>{$linha.departamento}</td>
+                <td>{$linha.qtd_total}</td>
                  <td><a href="/produto/detalhes/id/{$linha.codigo}">Detalhes</a> | 
                      <a href="/produto/edit/id/{$linha.codigo}">Editar</a> | 
                      <a href="/produto/delete/id/{$linha.codigo}" class="del">Deletar</a></td>
@@ -24,3 +26,4 @@
         {/foreach}          
     </tbody>
 </table>
+{$paginador}

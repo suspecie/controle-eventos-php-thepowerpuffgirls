@@ -59,6 +59,23 @@ class estadoModel extends model {
         $this->commit();
         return true;
     }
+    
+    
+    /** Retrieve the Entity */
+    public function getCountEstado($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getEstadoLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('*');
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($this->tabPadrao, $select, $where, null, $limit, null, null);
+    }
+    
+    
 
 }
 

@@ -40,9 +40,6 @@
                                         {/foreach}
                                     </select >
                                     <br>
-                                    <label for="datahora">Data/Hora</label>
-                                    <input type="datetime-local" class="form-control" id="datahora" name="datahora" required>
-                                    <br>
                                     <button type="submit" class="btn btn-default">Salvar</button>
                                 </div>                                                                
                         </div>

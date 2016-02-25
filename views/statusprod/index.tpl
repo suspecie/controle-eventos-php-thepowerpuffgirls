@@ -20,9 +20,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>Status</h1>
-                            <p>Cadastro de Status.
-                                </p>                            
+                            <h1>Status do Produto</h1>
+                            <p>Este cadstro irá conter o status do produto referente ao estoque.</p>                            
                             <a href="/statusprod/add" class="btn btn-default" id="btn_novo">Novo Status</a>
                             <br>
                             {include file="statusprod/index_grid.tpl"}

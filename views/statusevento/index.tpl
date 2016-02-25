@@ -21,8 +21,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Status do Evento</h1>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>                            
-                            <a href="/statusevento/add" class="btn btn-default" id="btn_novo">Novo</a>
+                            <p>Este cadastro irá inserir os status do evento.</p>                            
+                            <a href="/statusevento/add" class="btn btn-default" id="btn_novo">Novo Status</a>
                             <br>
                             {include file="statusevento/index_grid.tpl"}
                         </div>

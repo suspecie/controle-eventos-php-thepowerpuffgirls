@@ -25,7 +25,7 @@
                             <table class="table table-striped">                        
                                 <tbody>
                                     <tr><td>ID</td>  <td>{$registro.codigo}</td></tr>
-                                    <tr><td>Status</td>  <td>{$registro.statusprod}</td></tr>                            
+                                    <tr><td>Status</td>  <td>{$registro.status_prod}</td></tr>                            
                                 </tbody>
                             </table>                            
 

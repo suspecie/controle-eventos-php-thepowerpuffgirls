@@ -21,8 +21,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Cidade</h1>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>                            
-                            <a href="/cidade/add" class="btn btn-default" id="btn_novo">Novo</a>
+                            <p>Este cadastro irá inserir a cidade onde ocorrerá o evento.</p>                            
+                            <a href="/cidade/add" class="btn btn-default" id="btn_novo">Nova Cidade</a>
                             <br>
                             {include file="cidade/index_grid.tpl"}
                         </div>

@@ -21,8 +21,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                       <h1>Relatorio de Clientes</h1>
-                            <p>Evento. #1 - Campinas 10/10/2016 </p>          
-                                </p>                            
+                            <p> </p>          
+                                                           
                             <br>
                             {include file="relatoriocliente/index_grid.tpl"}
                         </div>

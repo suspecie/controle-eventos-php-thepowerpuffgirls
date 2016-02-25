@@ -63,6 +63,21 @@ class operadorescomsenhaModel extends model {
         $this->commit();
         return true;
     }
+    
+    /** Retrieve the Entity */
+    public function getoperadorescomsenhaLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('o.*','t.acessodescricao');
+        $tables = 'operadorescomsenha o LEFT JOIN tipodeacesso t on(o.tipo_acesso = t.codigo)';
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables , $select, $where, null, $limit, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getCountoperadorcomsenha($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
 
 }
 

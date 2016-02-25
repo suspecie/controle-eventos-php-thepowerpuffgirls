@@ -29,18 +29,20 @@
                                     <label for="descricao">Descrição</label>
                                     <input required="true" type="input" class="form-control" id="descricao" name="descricao" value="{$registro.descricao}">
                                     <br>
-                                       <div class="form-group">
-                               <label for="estado">Estado</label>
-                                     <select class="form-control" name = "estado" id = "estado">
-                                         <option value=""></option>
-                                       {foreach from=$listestado item=linha}
-                                             <option value="{$linha.codigo}">{$linha.estado}</option>
-                                       {/foreach}  
-                                     </select>  
-                                    </select>
-                                    <br>
-                                </div>  
-                                <button type="submit" class="btn btn-default">Atualizar</button>
+                                    <div class="form-group">
+                                        <label for="estado">Estado</label>
+                                        <select class="form-control" name = "estado" id = "estado">
+                                            <option value="{$registro.id_estado}">{$registro.estado}</option>
+                                            {foreach from=$listestado item=linha}
+                                                {if $linha.codigo neq $registro.id_estado}   
+                                                    <option value="{$linha.codigo}">{$linha.estado}</option>
+                                                {/if}
+                                            {/foreach}  
+                                        </select>  
+                                        </select>
+                                        <br>
+                                    </div>  
+                                    <button type="submit" class="btn btn-default">Atualizar</button>
                             </form>
                         </div>
                     </div>

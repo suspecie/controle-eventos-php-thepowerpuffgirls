@@ -9,13 +9,12 @@ class operadorescomsenha extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
-
+    public function index_action($pagina = 1) {
+        
         //list all records
-        $model_operadorescomsenha = new operadorescomsenhaModel();
-        $operadorescomsenha_res = $model_operadorescomsenha->getoperadorescomsenha(''); //Full table Scan :( or :)         
-        //send the records to template sytem
-        $this->smarty->assign('listoperadorescomsenha', $operadorescomsenha_res);
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
+
         $this->smarty->assign('title', 'Operadores');
         //call the smarty
         $this->smarty->display('operadorescomsenha/index.tpl');
@@ -85,6 +84,37 @@ class operadorescomsenha extends controller {
         $modelcliente->deloperadorescomsenha($dados);
 
         header('Location: /operadorescomsenha');
+    }
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+                      
+        //send the records to template sytem       
+        $model_operadorescomsenha = new operadorescomsenhaModel();      
+        $operadorescomsenha_res = $model_operadorescomsenha->getoperadorescomsenhaLimit(null, $inicio, $total_reg); //Full table Scan :( or :)  
+        
+        //send the records to template sytem
+        $this->smarty->assign('listoperadorescomsenha', $operadorescomsenha_res);
+        
+        $query_total = $model_operadorescomsenha->getCountoperadorcomsenha();
+        
+        $total_registros = $query_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'operadorescomsenha');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
     }
 
 }

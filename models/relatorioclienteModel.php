@@ -21,7 +21,25 @@ class relatorioclienteModel extends model {
     /** Retrieve the Entity */
     public function getRelatoriocliente($where = null) {
         $select = array('*');
-        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+        $tables = "cliente c";
+        return $this->read($tables, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getCountRelatoriocliente($where = null) {
+        $select = array('count(*) as total');    
+        $tables = "cliente c";
+        return $this->read($tables, $select, $where, null, null, null, null);
+    
+    }
+    
+    
+    /** Retrieve the Entity */
+    public function getRelatorioclienteLimit($where = null, $inicio = null, $total_reg = null) {
+       $select = array('*');
+       $tables = "cliente c";
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables, $select, $where, null, $limit, null, null);
     }
 
  }

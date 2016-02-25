@@ -9,14 +9,12 @@ class cidade extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
-
+    public function index_action($pagina = 1) {
+        
         //list all records
-        $model_cidades = new cidadeModel();
-        $cidades_res = $model_cidades->getCidade(); 
-        //var_dump($cidades_res);die();
-        //send the records to template sytem
-        $this->smarty->assign('listcidade', $cidades_res);
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
+
         $this->smarty->assign('title', 'Cidade');
         //call the smarty
         $this->smarty->display('cidade/index.tpl');
@@ -58,7 +56,7 @@ class cidade extends controller {
     public function detalhes() {
         $id = $this->getParam('id');
         $modelcidade = new cidadeModel();
-        $rescidade = $modelcidade->getCidade('codigo=' . $id);
+        $rescidade = $modelcidade->getCidade('c.codigo=' . $id);
         $this->smarty->assign('registro', $rescidade[0]);
         $this->smarty->assign('title', 'Detalhes Cidade');
         //call the smarty
@@ -70,7 +68,7 @@ class cidade extends controller {
         //die();
         $id = $this->getParam('id');
         $modelcidade = new cidadeModel();
-        $rescidade = $modelcidade->getCidade('codigo=' . $id);
+        $rescidade = $modelcidade->getCidade('c.codigo=' . $id);
         $this->smarty->assign('registro', $rescidade[0]);
         
              //chama estado
@@ -99,6 +97,37 @@ class cidade extends controller {
         $modelcidade->delCidade($dados);
 
         header('Location: /cidade');
+    }
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+        //list all records
+        $model_cidade = new cidadeModel();
+        $cidades_res = $model_cidade->getCidadeLimit(null,$inicio,$total_reg); 
+        //var_dump($cidades_res);die();
+        //send the records to template sytem
+        $this->smarty->assign('listcidade', $cidades_res);
+          
+        $query_total = $model_cidade->getCountCidade('');
+     
+        $total_registros = $query_total[0]['total']; //pega o valor
+        
+        $html = $this->paginador($pc, $total_registros, 'cidade');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
     }
     
 

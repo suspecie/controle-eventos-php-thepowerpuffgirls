@@ -9,13 +9,12 @@ class cliente extends controller {
         $valida->sessao_valida();
     }
 
-    public function index_action() {
+    public function index_action($pagina = 1) {
 
         //list all records
-        $model_clientes = new clienteModel();
-        $clientes_res = $model_clientes->getCliente(''); //Full table Scan :( or :)         
-        //send the records to template sytem
-        $this->smarty->assign('listcliente', $clientes_res);
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
+        
         $this->smarty->assign('title', 'Cliente');
         //call the smarty
         $this->smarty->display('cliente/index.tpl');
@@ -84,11 +83,50 @@ class cliente extends controller {
         $id = $this->getParam('id');
         $modelcliente = new clienteModel();
         $dados['codigo'] = $id;
-        $modelcliente->delCliente($dados);
+        $delete = $modelcliente->delCliente($dados);
+        if (!$delete) {
+            $clientes_res = $modelcliente->getCliente(''); //Full table Scan :( or :)         
+            //send the records to template sytem
+            $this->smarty->assign('listcliente', $clientes_res);
+            $this->smarty->assign('error', 'Desculpe, não é possível excluir o cliente, pois o cliente está cadastrado em um evento!');
+        }
 
-        header('Location: /cliente');
+        $clientes_res = $modelcliente->getCliente(''); //Full table Scan :( or :)         
+        //send the records to template sytem
+        $this->smarty->assign('listcliente', $clientes_res);
+        $this->smarty->display('cliente/index.tpl');
     }
-
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+        $model_clientes = new clienteModel();
+        $clientes_res = $model_clientes->getClienteLimit(null,$inicio,$total_reg); //Full table Scan :( or :)         
+        
+        
+        //send the records to template sytem
+        $this->smarty->assign('listcliente', $clientes_res);
+        
+        $query_total = $model_clientes->getCountCliente();
+        
+        $total_registros = $query_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'cliente');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
 }
 
 ?>

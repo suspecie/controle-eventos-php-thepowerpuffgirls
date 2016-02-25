@@ -21,10 +21,35 @@ class relatorioeventoclienteModel extends model {
   
     /** Retrieve the Entity */
     public function getRelatorioeventocliente($where = null) {
-        $select = array('e.*', 'c.descricao as cidade', 'se.descricao as statusevento');
+        $select = array('e.*', 'c.descricao as cidade', 'se.descricao as statusevento', 'cl.nome as nomecliente');
         $tables = "evento e left join cidade c on (c.codigo  = e.id_cidade)";
         $tables .= " left join status_evento se on (se.codigo  = e.id_status)";
+        $tables .= " left join participacao p on(p.id_evento = e.codigo)";
+        $tables .= " left join cliente cl on(cl.codigo = p.id_cliente)";
         return $this->read($tables, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getCountRelatorioeventocliente($where = null) {
+        $select = array('count(*) as total');    
+         $tables = "evento e left join cidade c on (c.codigo  = e.id_cidade)";
+        $tables .= " left join status_evento se on (se.codigo  = e.id_status)";
+        $tables .= " left join participacao p on(p.id_evento = e.codigo)";
+        $tables .= " left join cliente cl on(cl.codigo = p.id_cliente)";
+        return $this->read($tables, $select, $where, null, null, null, null);
+    
+    }
+    
+    
+    /** Retrieve the Entity */
+    public function getRelatorioeventoclienteLimit($where = null, $inicio = null, $total_reg = null) {
+       $select = array('e.*', 'c.descricao as cidade', 'se.descricao as statusevento', 'cl.nome as nomecliente');
+        $tables = "evento e left join cidade c on (c.codigo  = e.id_cidade)";
+        $tables .= " left join status_evento se on (se.codigo  = e.id_status)";
+        $tables .= " left join participacao p on(p.id_evento = e.codigo)";
+        $tables .= " left join cliente cl on(cl.codigo = p.id_cliente)";
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables, $select, $where, null, $limit, null, null);
     }
 
 

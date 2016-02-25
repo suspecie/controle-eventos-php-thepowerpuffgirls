@@ -61,6 +61,22 @@ class eventoModel extends model {
         $this->commit();
         return true;
     }
+    
+    /** Retrieve the Entity */
+    public function getCountEvento($where = null) {
+        $select = array('count(*) as total');
+    
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    }
+    
+    /** Retrieve the Entity */
+    public function getEventoLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('e.*', 'c.descricao as cidade', 'se.descricao as statusevento');
+        $tables = "evento e left join cidade c on (c.codigo  = e.id_cidade)";
+        $tables .= " left join status_evento se on (se.codigo  = e.id_status)";
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables, $select, $where, null, $limit, null, null);
+    }
 
 }
 

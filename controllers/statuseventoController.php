@@ -9,13 +9,13 @@ class statusevento extends controller {
         $valida->sessao_valida();
     }
     
-    public function index_action() {
+    public function index_action($pagina = 1) {
+        
+         //list all records
+        $_SESSION['pagina'] = $pagina;
+        $this->smarty->assign('paginador', $this->mostraGrid());
 
-        //list all records
-        $model_statuseventos = new statuseventoModel();
-        $statuseventos_res = $model_statuseventos->getStatusEvento(''); //Full table Scan :( or :)   
-        //send the records to template sytem
-        $this->smarty->assign('liststatusevento', $statuseventos_res);
+       
         $this->smarty->assign('title', 'Status Eventos');
         //call the smarty
         $this->smarty->display('statusevento/index.tpl');
@@ -76,6 +76,37 @@ class statusevento extends controller {
 
         header('Location: /statusevento');
     }
+    
+    public function mostraGrid(){
+        $total_reg = "10"; // número de registros por página
+        $pagina = $_SESSION['pagina'];
+        if (!$pagina) {
+            $pc = "1";
+        } else {
+            $pc = $pagina;
+        }
+        
+        $inicio = $pc - 1;
+        $inicio = $inicio * $total_reg;
+        
+        //list all records
+        $model_statuseventos = new statuseventoModel();
+        $statuseventos_res = $model_statuseventos->getStatusEventoLimit(null,$inicio,$total_reg); //Full table Scan :( or :)   
+        //send the records to template sytem
+        $this->smarty->assign('liststatusevento', $statuseventos_res);
+       
+        
+        $query_total = $model_statuseventos->getCountStatusEvento();
+        
+        $total_registros = $query_total[0]['total']; //pega o valor
+        $html = $this->paginador($pc, $total_registros, 'statusevento');
+        return $html;
+    }
+    
+    public function paginacao() {
+        $this->index_action($this->getParam('pagina'));
+    }
+    
     
 
 }

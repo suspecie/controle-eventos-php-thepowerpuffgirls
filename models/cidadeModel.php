@@ -21,8 +21,8 @@ class cidadeModel extends model {
     
     /** Retrieve the Entity */
     public function getCidade($where = null) {
-        $select = array('*');
-        $tables = "cidade c LEFT JOIN estado e on c.id_estado = e.codigo";
+        $select = array('c.*','e.estado as estado');
+        $tables = "cidade c left join estado e on (c.id_estado = e.codigo)";
         $return = $this->read($tables, $select, $where, null, null, null);
         //var_dump($return); die();
         
@@ -62,7 +62,24 @@ class cidadeModel extends model {
         $this->commit();
         return true;
     }
-
+    
+     /** Retrieve the Entity */
+    public function getCountCidade($where = null) {
+        $select = array('count(*) as total');       
+        return $this->read($this->tabPadrao, $select, $where, null, null, null, null);
+    
+    }
+    
+    
+    /** Retrieve the Entity */
+    public function getRelatorioclienteLimit($where = null, $inicio = null, $total_reg = null) {
+        $select = array('c.*','e.estado as estado');
+        $tables = "cidade c left join estado e on (c.id_estado = e.codigo)";
+        $limit = $inicio . ','. $total_reg;
+        return $this->read($tables, $select, $where, null, $limit, null, null);
+    }
 }
+
+
 
 ?>
